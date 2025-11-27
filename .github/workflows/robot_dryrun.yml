@@ -1,0 +1,20 @@
+name: Scan robocop and Dryrun
+on : push
+jobs : 
+  scan_syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install lib
+        run: pip install -r requirements.txt
+      - name: Run Robocop
+        run: robocop
+      - name: Check dryrun robot
+        run: robot --dryrun -d result -v LANG:en -v IS_CICD:true -i status:ready .

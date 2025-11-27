@@ -1,0 +1,11 @@
+url:
+ goody_admin_url: 
+browser: chrome
+
+GLOBAL_CONFIG:
+ TIME_OUT: 60s
+ STEP_TIMEOUT: 5s
+
+DEFAULT_SCREEN_SIZE:
+ WIDTH: 1920
+ HEIGHT: 1080
