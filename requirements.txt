@@ -1,0 +1,9 @@
+robotframework
+robotframework-seleniumlibrary
+robotframework-debuglibrary
+robotframework-pabot 
+PyYAML
+webdriver-manager
+robotframework-robocop==5.8.1
+trcli
+python-dotenv
