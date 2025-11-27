@@ -1,4 +1,4 @@
-# HeyGoody Automation
+# ThaiPBS-2 Automation
 - **Testing Framework:** Robot Framework  
 - **Library:** Selenium
 
