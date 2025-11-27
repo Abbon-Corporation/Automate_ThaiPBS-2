@@ -1,0 +1,8 @@
+/result/*
+/results/*
+*.pyc
+*.lock
+*.html
+*.xml
+.env.*
+.pabotsuitenames
