@@ -28,7 +28,7 @@
 
 #### **Main Project Structure**  
 ```plaintext
-AUTOMATION_HeyGoody  
+AUTOMATION_ThaiPBS-2  
 ├── .github                   # GitHub workflows and configuration files  
 ├── keywords                  # Custom keywords organized by features  
 │   ├── feature               # Feature-specific keywords  
