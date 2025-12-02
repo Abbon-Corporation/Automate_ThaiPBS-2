@@ -57,9 +57,9 @@ jobs:
         with:
           name: robot-test-result
           path: result/**
-      - name: Upload Test Results to TestRail
-        run: |
-          python resources/custom_library/testrail_result_upload.py
+      #- name: Upload Test Results to TestRail
+        #run: |
+          #python resources/custom_library/testrail_result_upload.py
 
       # ------------------------------
       # Added: Notify Discord on Failure
