@@ -1,1 +1,10 @@
-setup
+login_page:
+  login_title: เข้าสู่ระบบ
+
+home_page:
+  thaip_title: Dashboard
+  message: การจัดการข้อความ
+  template_module: ข้อความอวยพร
+
+template_module:
+  create_txt: สร้างเทมเพลต

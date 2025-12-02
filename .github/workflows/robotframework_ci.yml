@@ -7,7 +7,7 @@ on:
   pull_request: null
   workflow_dispatch: null
 jobs:
-  heygoody_automation_web:
+  thaip_automation_web:
     runs-on: ubuntu-latest
     env:
       email_admin: ${{ secrets.EMAIL_ADMIN }}

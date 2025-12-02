@@ -1,0 +1,137 @@
+*** Settings ***
+Resource    ${CURDIR}/../../../resources/import.robot
+
+*** Variables ***
+${craete_template_bt}    xpath=//button[@class="items-center justify-center whitespace-nowrap rounded-[4px] font-normal transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-primary py-2 px-5 text-lg flex gap-2 text-white"]
+${craete_template_txt}    xpath=//span[text()="${template_module['create_txt']}"]
+${password_login_input}    xpath=//*[@name="password"]
+${signin_login_button}    xpath=//*[@type="submit"]
+${input_tempale_name_elm}    xpath=//input[@placeholder="ชื่อเทมเพลต"]
+${input_message_elm}    xpath=//*[@placeholder="ข้อความ"]
+${tap_start_date_elm}    xpath=//button[contains(.,'ระบุวันที่เริ่มต้น')]
+${current_day_elm}    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-[4px] transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 px-4 py-2 text-sm text-primary font-normal']
+${tap_end_date_elm}    xpath=//button[contains(.,'ระบุวันที่สิ้นสุด')]
+${tap_start_time_elm}    xpath=//input[@placeholder='ระบุเวลาเริ่มต้น']
+${current_time_elm}    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-[4px] transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground px-4 py-2 text-primary text-sm font-normal']
+${tap_end_time_elm}    xpath=//input[@placeholder='ระบุเวลาสิ้นสุด']
+${create_massage_tempalte_bt}    xpath=//button[contains(.,'สร้างข้อความอวยพร')]
+${input_message_tempale_name_elm}    xpath=//input[@name="name"]
+${defualt_tab}    xpath=//button[contains(.,'Defualt')]
+${style1_elm}    xpath=//div[contains(@class,'flex') and .//div[text()='Style 1']]
+${import_image_elm}    xpath=//input[@accept="image/jpeg,.jpg,.jpeg,image/png,.png"]
+${save_message_template_elm}    xpath=(//button[@type='submit'])[2]
+${message_elm}    xpath=//*[@placeholder="Greeting"]
+${save_template_elm}    xpath=(//button[@type='submit'])[1]
+${toast_create_success}    xpath=//p[normalize-space()='สำเร็จ!']
+
+*** Keywords ***
+Click Create Template Button
+    [Documentation]    Can click create template button
+    SeleniumLibrary.Wait Until Element Is Enabled    ${craete_template_bt}
+    common.Click Element When Ready    ${craete_template_bt}
+
+Verify Page Display Create Tempale Page
+    [Documentation]    The system can display สร้างบรอดแคสต์
+    SeleniumLibrary.Wait Until Element Is Enabled    ${craete_template_txt}
+    common.Wait Until Element Is Ready For Interaction    ${craete_template_txt}
+
+Input Template Name
+    [Documentation]    Input template name
+    [Arguments]    ${name}
+    ${randome}=    Evaluate    random.randint(1000, 9999)    modules=random
+    common.Input Text To Element When Ready   ${input_tempale_name_elm}     ${name}${randome}
+
+Input Alert Message
+    [Documentation]    Input template name
+    [Arguments]    ${messge}
+    ${randome_str}=    Evaluate    ''.join(random.choices('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', k=4))    modules=random
+    common.Input Text To Element When Ready   ${input_message_elm}     ${messge}${randome_str}
+
+Select Start Date At Current Button
+    [Documentation]    Click date picker to selete start date
+    common.Click Element When Ready    ${tap_start_date_elm}
+    common.Click Element When Ready    ${current_day_elm}
+
+Select End Date At Current Button
+    [Documentation]    Click date picker to selete end date
+    common.Click Element When Ready    ${tap_end_date_elm}
+    common.Click Element When Ready    ${current_day_elm}
+
+Select Start Date At Tomorrow
+    [Documentation]    Click date picker to selete start date at tomorrow
+    common.Click Element When Ready    ${tap_start_date_elm}
+    ${tomorrow_day}=    Get Current Date    result_format=%d    increment=1 days
+    ${tomorrow_int}=    Convert To Integer    ${tomorrow_day}
+    Click Element    xpath=//td/button[@name="day" and normalize-space(text())="${tomorrow_int}"]
+
+Select Start Time At Current Button
+    [Documentation]    Click date picker to selete start time at current time button
+    common.Click Element When Ready    ${tap_start_time_elm}
+    common.Click Element When Ready    ${current_time_elm}
+
+Select End Date +1 At Start Date
+    [Documentation]    Click date picker to selete start date at tomorrow
+    common.Click Element When Ready    ${tap_end_date_elm}
+    ${end_day}=    Get Current Date    result_format=%d    increment=2 days
+    ${end_int}=    Convert To Integer    ${end_day}
+    Click Element    xpath=//td/button[@name="day" and normalize-space(text())="${end_int}"]
+
+Select End Time At Current Button
+    [Documentation]    Click date picker to selete start time at current time button
+    common.Click Element When Ready    ${tap_end_time_elm}
+    common.Click Element When Ready    ${current_time_elm}
+
+Click Create Message Template Button
+    [Documentation]    Click create message template button
+    common.Click Element When Ready    ${create_massage_tempalte_bt}
+
+Input Message Template Name
+    [Documentation]    Input Message Template Name
+    [Arguments]    ${name_message}
+    ${randome}=    Evaluate    random.randint(1000, 9999)    modules=random
+    common.Input Text To Element When Ready   ${input_message_tempale_name_elm}     ${name_message}${randome}
+
+Click Defualt Tab
+    [Documentation]    To click default tab
+    common.Click Element When Ready    ${defualt_tab}
+
+Click Style1 
+    [Documentation]    To click style1
+    common.Click Element When Ready    ${defualt_tab}
+
+Import Upper Image
+    [Documentation]    To import image file
+    [Arguments]    ${upper_image_path}
+    SeleniumLibrary.Wait Until Element Is Enabled    ${import_image_elm}
+    SeleniumLibrary.Choose File    ${import_image_elm}    ${upper_image_path}
+
+Import Lower Image
+    [Documentation]    To import image file
+    [Arguments]    ${lower_image_path}
+    SeleniumLibrary.Wait Until Element Is Enabled    ${import_image_elm}
+    SeleniumLibrary.Choose File    ${import_image_elm}    ${lower_image_path}
+
+Input Message Template 
+    [Documentation]    To input message
+    [Arguments]    ${message_input}
+    common.Input Text To Element When Ready    ${message_elm}    ${message_input}
+
+Selete Color Template
+    [Documentation]    To input message
+    [Arguments]    ${color_input}
+    common.Click Element When Ready    xpath=//div[contains(@style, '${color_input}')]
+
+Click Save Message Template Button
+    [Documentation]    Click to save template
+    common.Click Element When Ready    ${save_message_template_elm}
+
+Click Save Template Button
+    [Documentation]    Click to create template
+    common.Click Element When Ready    ${save_template_elm}
+
+Verify Create Tempalte Success Toast 
+    [Documentation]    Click to save template
+    SeleniumLibrary.Wait Until Element Is Enabled    ${toast_create_success}
+    SeleniumLibrary.Page Should Contain Element    ${toast_create_success}  
+
+
