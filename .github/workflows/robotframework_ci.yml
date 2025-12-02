@@ -7,7 +7,7 @@ on:
   pull_request: null
   workflow_dispatch: null
 jobs:
-  heygoody_automation_web:
+  thaip_automation_web:
     runs-on: ubuntu-latest
     env:
       email_admin: ${{ secrets.EMAIL_ADMIN }}
@@ -57,26 +57,26 @@ jobs:
         with:
           name: robot-test-result
           path: result/**
-      - name: Upload Test Results to TestRail
-        run: |
-          python resources/custom_library/testrail_result_upload.py
+      #- name: Upload Test Results to TestRail
+        #run: |
+          #python resources/custom_library/testrail_result_upload.py
 
       # ------------------------------
       # Added: Notify Discord on Failure
       # ------------------------------
-      - name: Notify Discord on Failure
-        if: failure()
-        run: |
-          curl -X POST -H "Content-Type: application/json" \
-          -d '{"content": "🚨 **Tests FAILED!** 🚨\n\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref_name }}\n**Commit:** ${{ github.sha }}\n\n[View Logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"}' \
-          "${{ secrets.DISCORD_WEBHOOK_URL }}"
+      #- name: Notify Discord on Failure
+        #if: failure()
+        #run: |
+          #curl -X POST -H "Content-Type: application/json" \
+          #-d '{"content": "🚨 **Tests FAILED!** 🚨\n\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref_name }}\n**Commit:** ${{ github.sha }}\n\n[View Logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"}' \
+          #"${{ secrets.DISCORD_WEBHOOK_URL }}"
 
       # ------------------------------
       # Added: Notify Discord on Success
       # ------------------------------
-      - name: Notify Discord on Success
-        if: success()
-        run: |
-          curl -X POST -H "Content-Type: application/json" \
-          -d '{"content": "✅ **All Tests PASSED!** ✅\n\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref_name }}\n**Commit:** ${{ github.sha }}\n\n[View Results](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"}' \
-          "${{ secrets.DISCORD_WEBHOOK_URL }}"
+      #- name: Notify Discord on Success
+        #if: success()
+        #run: |
+          #curl -X POST -H "Content-Type: application/json" \
+          #-d '{"content": "✅ **All Tests PASSED!** ✅\n\n**Repository:** ${{ github.repository }}\n**Branch:** ${{ github.ref_name }}\n**Commit:** ${{ github.sha }}\n\n[View Results](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"}' \
+          #"${{ secrets.DISCORD_WEBHOOK_URL }}"

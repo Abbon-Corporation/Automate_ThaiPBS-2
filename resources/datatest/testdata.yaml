@@ -1,5 +1,8 @@
-tc_master_list_040:
-  search_keyword: Type
-  
-tc_master_list_041:
-  search_keyword: Type
+tc_template_001:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color: rgb(255, 255, 255)
+  upper_image_path: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  lower_image_path: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
