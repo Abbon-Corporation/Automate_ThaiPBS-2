@@ -146,4 +146,3 @@ Verify With Name When Create Tempalte Success
 Click Style2
     [Documentation]    To click style2
     common.Click Element When Ready    ${style2_elm}
-
