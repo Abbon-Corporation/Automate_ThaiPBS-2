@@ -29,6 +29,6 @@ Create Template Style1
     template_page.Input Message Template    ${message_input}
     template_page.Selete Color Template    ${color_input}
     template_page.Click Save Message Template Button
-    template_page.Click Save Template Button
     Sleep    5
+    template_page.Click Save Template Button
     template_page.Verify Create Tempalte Success Toast
