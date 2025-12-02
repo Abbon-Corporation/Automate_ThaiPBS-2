@@ -19,7 +19,7 @@ ${input_message_tempale_name_elm}    xpath=//input[@name="name"]
 ${defualt_tab}    xpath=//button[contains(.,'Defualt')]
 ${style1_elm}    xpath=//div[contains(@class,'flex') and .//div[text()='Style 1']]
 ${import_image_elm}    xpath=//input[@accept="image/jpeg,.jpg,.jpeg,image/png,.png"]
-${save_message_template_elm}    xpath=//button[text()="บันทึก"]
+${save_message_template_elm}    xpath=(//button[@type='submit'])[2]
 ${message_elm}    xpath=//*[@placeholder="Greeting"]
 ${save_template_elm}    xpath=//button[text()="บันทึก"]
 ${name_template_elm}    xpath=//tr[1]//span[@class='line-clamp-1 cursor-pointer hover:underline hover:text-brand']
@@ -129,7 +129,6 @@ Click Save Message Template Button
 
 Click Save Template Button
     [Documentation]    Click to create template
-    Wait Until Element Is Visible
     SeleniumLibrary.Scroll Element Into View    ${save_template_elm}
     SeleniumLibrary.Wait Until Element Is Visible    ${save_template_elm}
     common.Click Element When Ready    ${save_template_elm}
