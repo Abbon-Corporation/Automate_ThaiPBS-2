@@ -16,7 +16,7 @@ Input Detail Tempale At Schedule Date And Time
     template_page.Select Start Time At Current Button
     template_page.Select End Date +1 At Start Date
     template_page.Select End Time At Current Button
-    RETURN    ${name_validate}
+    RETURN   ${name_validate}
 
 Create Template Style1
     [Documentation]    Create Template Style1
@@ -30,6 +30,7 @@ Create Template Style1
     template_page.Input Message Template    ${message_input}
     template_page.Selete Color Template    ${color_input}
     template_page.Click Save Message Template Button
+    Sleep    5
     template_page.Click Save Template Button
     Sleep    5
     template_page.Verify With Name When Create Tempalte Success    ${name_validate}
