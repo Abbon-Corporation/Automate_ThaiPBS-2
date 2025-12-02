@@ -21,7 +21,7 @@ ${style1_elm}    xpath=//div[contains(@class,'flex') and .//div[text()='Style 1'
 ${import_image_elm}    xpath=//input[@accept="image/jpeg,.jpg,.jpeg,image/png,.png"]
 ${save_message_template_elm}    xpath=(//button[@type='submit'])[2]
 ${message_elm}    xpath=//*[@placeholder="Greeting"]
-${save_template_elm}    xpath=(//button[@type='submit'])[1]
+${save_template_elm}    xpath=//button[text()="บันทึก"]
 ${name_template_elm}    xpath=//tr[1]//span[@class='line-clamp-1 cursor-pointer hover:underline hover:text-brand']
 
 *** Keywords ***
