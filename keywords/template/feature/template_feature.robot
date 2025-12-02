@@ -31,4 +31,5 @@ Create Template Style1
     template_page.Selete Color Template    ${color_input}
     template_page.Click Save Message Template Button
     template_page.Click Save Template Button
+    Sleep    60
     template_page.Verify With Name When Create Tempalte Success    ${name_validate}
