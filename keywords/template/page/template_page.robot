@@ -22,7 +22,7 @@ ${import_image_elm}    xpath=//input[@accept="image/jpeg,.jpg,.jpeg,image/png,.p
 ${save_message_template_elm}    xpath=(//button[@type='submit'])[2]
 ${message_elm}    xpath=//*[@placeholder="Greeting"]
 ${save_template_elm}    xpath=(//button[@type='submit'])[1]
-${toast_create_success_elm}    xpath=//*[@class='group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg']
+${toast_create_success_elm}    xpath=//p[text()='สำเร็จ!']
 
 *** Keywords ***
 Click Create Template Button
@@ -127,9 +127,10 @@ Click Save Message Template Button
 
 Click Save Template Button
     [Documentation]    Click to create template
+    SeleniumLibrary.Wait Until Page Contains Element    ${save_template_elm}
     common.Click Element When Ready    ${save_template_elm}
 
 Verify Create Tempalte Success Toast
     [Documentation]    Click to save template
-    SeleniumLibrary.Wait Until Element Is Enabled    ${toast_create_success_elm}
+    SeleniumLibrary.Wait Until Page Contains Element    ${toast_create_success_elm}
     common.Wait Until Element Is Ready For Interaction    ${toast_create_success_elm}
