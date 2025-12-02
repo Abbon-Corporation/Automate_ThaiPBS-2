@@ -29,8 +29,6 @@ Create Template Style1
     template_page.Import Lower Image    ${lower_image_path}
     template_page.Input Message Template    ${message_input}
     template_page.Selete Color Template    ${color_input}
-    Sleep    5
     template_page.Click Save Message Template Button
     template_page.Click Save Template Button
-    Sleep    5
     template_page.Verify With Name When Create Tempalte Success    ${name_validate}
