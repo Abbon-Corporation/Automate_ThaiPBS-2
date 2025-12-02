@@ -1,4 +1,4 @@
-tc_template_001:
+tc_template_create_001:
   name_input: AutomateTest
   message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
   message_name_input: AutomateTest
@@ -6,3 +6,15 @@ tc_template_001:
   color: rgb(255, 255, 255)
   upper_image_path: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
   lower_image_path: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+
+tc_template_create_002:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color_01: rgb(18, 18, 18)
+  color_02: rgb(254, 81, 0)
+  upper_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  lower_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  upper_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  lower_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
