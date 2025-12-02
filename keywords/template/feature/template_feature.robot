@@ -20,7 +20,7 @@ Input Detail Tempale At Schedule Date And Time
 
 Create Template Style1
     [Documentation]    Create Template Style1
-    [Arguments]    ${name_message}    ${upper_image_path}    ${lower_image_path}    ${message_input}    ${color_input}    ${name_validate}
+    [Arguments]    ${name_message}    ${upper_image_path}    ${lower_image_path}    ${message_input}    ${color_input}
     template_page.Click Create Message Template Button
     template_page.Input Message Template Name    ${name_message}
     #template_page.Click Defualt Tab
@@ -30,6 +30,16 @@ Create Template Style1
     template_page.Input Message Template    ${message_input}
     template_page.Selete Color Template    ${color_input}
     template_page.Click Save Message Template Button
-    template_page.Click Save Template Button
-    Sleep    30
-    template_page.Verify With Name When Create Tempalte Success    ${name_validate}
+
+Create Template Style2
+    [Documentation]    Create Template Style2
+    [Arguments]    ${name_message}    ${upper_image_path}    ${lower_image_path}    ${message_input}    ${color_input}
+    template_page.Click Create Message Template Button
+    template_page.Input Message Template Name    ${name_message}
+    #template_page.Click Defualt Tab
+    template_page.Click Style2
+    template_page.Import Upper Image    ${upper_image_path}
+    template_page.Import Lower Image    ${lower_image_path}
+    template_page.Input Message Template    ${message_input}
+    template_page.Selete Color Template    ${color_input}
+    template_page.Click Save Message Template Button
