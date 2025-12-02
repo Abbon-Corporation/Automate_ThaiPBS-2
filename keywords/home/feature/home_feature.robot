@@ -6,7 +6,7 @@ Verify Page Display Home Component
     [Documentation]    Current page should be dispaly home component as expected
     home_page.Verify Page Display ThaiPBS Title
     home_page.Verify Page Display Message Management Module
-    
+
 Tap Main Menu And Submenu
     [Documentation]    Click on main menu after that click on submenu
     [Arguments]    ${main_menu}    ${sub_menu}
