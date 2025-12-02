@@ -22,7 +22,7 @@ ${import_image_elm}    xpath=//input[@accept="image/jpeg,.jpg,.jpeg,image/png,.p
 ${save_message_template_elm}    xpath=(//button[@type='submit'])[2]
 ${message_elm}    xpath=//*[@placeholder="Greeting"]
 ${save_template_elm}    xpath=(//button[@type='submit'])[1]
-${toast_create_success_elm}    xpath=//p[text()='สำเร็จ!']
+${name_template_elm}    xpath=//tr[1]//span[@class='line-clamp-1 cursor-pointer hover:underline hover:text-brand']
 
 *** Keywords ***
 Click Create Template Button
@@ -39,7 +39,9 @@ Input Template Name
     [Documentation]    Input template name
     [Arguments]    ${name}
     ${randome}=    Evaluate    random.randint(1000, 9999)    modules=random
-    common.Input Text To Element When Ready   ${input_tempale_name_elm}     ${name}${randome}
+    ${name_randome}=    Set Variable    ${name}${randome}
+    common.Input Text To Element When Ready   ${input_tempale_name_elm}    ${name_randome}
+    RETURN    ${name_randome}
 
 Input Alert Message
     [Documentation]    Input template name
@@ -127,10 +129,11 @@ Click Save Message Template Button
 
 Click Save Template Button
     [Documentation]    Click to create template
-    SeleniumLibrary.Wait Until Page Contains Element    ${save_template_elm}
+    SeleniumLibrary.Scroll Element Into View    ${save_template_elm}
     common.Click Element When Ready    ${save_template_elm}
 
-Verify Create Tempalte Success Toast
+Verify With Name When Create Tempalte Success
     [Documentation]    Click to save template
-    SeleniumLibrary.Wait Until Page Contains Element    ${toast_create_success_elm}
-    common.Wait Until Element Is Ready For Interaction    ${toast_create_success_elm}
+    [Arguments]    ${craete_name}
+    ${template_name}=    Get Text    ${name_template_elm}
+    Should Be Equal    ${template_name}    ${craete_name}
