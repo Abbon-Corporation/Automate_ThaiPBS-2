@@ -4,5 +4,5 @@ tc_template_001:
   message_name_input: AutomateTest
   message_templat_input: AutomateTest
   color: rgb(255, 255, 255)
-  upper_image_path: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
-  lower_image_path: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  upper_image_path: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  lower_image_path: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg

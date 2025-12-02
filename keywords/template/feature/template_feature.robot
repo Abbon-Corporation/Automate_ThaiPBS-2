@@ -21,7 +21,7 @@ Create Template Style1
     [Documentation]    Create Template Style1
     [Arguments]    ${name_message}    ${upper_image_path}    ${lower_image_path}    ${message_input}    ${color_input}
     template_page.Click Create Message Template Button
-    template_page.Input Message Template Name        ${name_message}
+    template_page.Input Message Template Name    ${name_message}
     #template_page.Click Defualt Tab
     #template_page.Click Style1
     template_page.Import Upper Image    ${upper_image_path}
@@ -31,7 +31,3 @@ Create Template Style1
     template_page.Click Save Message Template Button
     template_page.Click Save Template Button
     template_page.Verify Create Tempalte Success Toast
-
-
-
-Selete General Message

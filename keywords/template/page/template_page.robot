@@ -95,7 +95,7 @@ Click Defualt Tab
     [Documentation]    To click default tab
     common.Click Element When Ready    ${defualt_tab}
 
-Click Style1 
+Click Style1
     [Documentation]    To click style1
     common.Click Element When Ready    ${defualt_tab}
 
@@ -111,7 +111,7 @@ Import Lower Image
     SeleniumLibrary.Wait Until Element Is Enabled    ${import_image_elm}
     SeleniumLibrary.Choose File    ${import_image_elm}    ${lower_image_path}
 
-Input Message Template 
+Input Message Template
     [Documentation]    To input message
     [Arguments]    ${message_input}
     common.Input Text To Element When Ready    ${message_elm}    ${message_input}
@@ -129,9 +129,7 @@ Click Save Template Button
     [Documentation]    Click to create template
     common.Click Element When Ready    ${save_template_elm}
 
-Verify Create Tempalte Success Toast 
+Verify Create Tempalte Success Toast
     [Documentation]    Click to save template
     SeleniumLibrary.Wait Until Element Is Enabled    ${toast_create_success}
-    SeleniumLibrary.Page Should Contain Element    ${toast_create_success}  
-
-
+    SeleniumLibrary.Page Should Contain Element    ${toast_create_success}
