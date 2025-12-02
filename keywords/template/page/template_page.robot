@@ -17,11 +17,11 @@ ${tap_end_time_elm}    xpath=//input[@placeholder='ระบุเวลาส�
 ${create_massage_tempalte_bt}    xpath=//button[contains(.,'สร้างข้อความอวยพร')]
 ${input_message_tempale_name_elm}    xpath=//input[@name="name"]
 ${defualt_tab}    xpath=//button[contains(.,'Defualt')]
-${style1_elm}    xpath=[@id=":r7k:-form-item"]/div[1]/div
-${style2_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-primary bg-brand-50"]
-${style3_elm}    xpath=[@id=":r7k:-form-item"]/div[3]/div
-${style4_elm}    xpath=[@id=":r7k:-form-item"]/div[4]/div
-${style5_elm}    xpath=[@id=":r7k:-form-item"]/div[5]/div
+${style1_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][1]
+${style2_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][2]
+${style3_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-primary bg-brand-50"]
+${style4_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][3]
+${style5_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][4]
 ${import_image_elm}    xpath=//input[@accept="image/jpeg,.jpg,.jpeg,image/png,.png"]
 ${save_message_template_elm}    xpath=(//button[@type='submit'])[2]
 ${message_elm}    xpath=//*[@placeholder="Greeting"]
@@ -146,3 +146,19 @@ Verify With Name When Create Tempalte Success
 Click Style2
     [Documentation]    To click style2
     common.Click Element When Ready    ${style2_elm}
+
+Click Style3
+    [Documentation]    To click style2
+    common.Click Element When Ready    ${style3_elm}
+
+Import Left Image
+    [Documentation]    To import image file
+    [Arguments]    ${upper_image_path}
+    SeleniumLibrary.Wait Until Element Is Enabled    ${import_image_elm}
+    SeleniumLibrary.Choose File    ${import_image_elm}    ${upper_image_path}
+
+Import Hight Image
+    [Documentation]    To import image file
+    [Arguments]    ${lower_image_path}
+    SeleniumLibrary.Wait Until Element Is Enabled    ${import_image_elm}
+    SeleniumLibrary.Choose File    ${import_image_elm}    ${lower_image_path}

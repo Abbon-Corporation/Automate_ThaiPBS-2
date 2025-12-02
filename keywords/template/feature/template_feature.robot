@@ -43,3 +43,16 @@ Create Template Style2
     template_page.Input Message Template    ${message_input}
     template_page.Selete Color Template    ${color_input}
     template_page.Click Save Message Template Button
+
+Create Template Style3
+    [Documentation]    Create Template Style2
+    [Arguments]    ${name_message}    ${upper_image_path}    ${lower_image_path}    ${message_input}    ${color_input}
+    template_page.Click Create Message Template Button
+    template_page.Input Message Template Name    ${name_message}
+    #template_page.Click Defualt Tab
+    template_page.Click Style3
+    template_page.Import Left Image    ${upper_image_path}
+    template_page.Import Hight Image    ${lower_image_path}
+    template_page.Input Message Template    ${message_input}
+    template_page.Selete Color Template    ${color_input}
+    template_page.Click Save Message Template Button
