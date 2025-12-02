@@ -129,7 +129,9 @@ Click Save Message Template Button
 
 Click Save Template Button
     [Documentation]    Click to create template
+    Wait Until Element Is Visible
     SeleniumLibrary.Scroll Element Into View    ${save_template_elm}
+    SeleniumLibrary.Wait Until Element Is Visible    ${save_template_elm}
     common.Click Element When Ready    ${save_template_elm}
 
 Verify With Name When Create Tempalte Success
