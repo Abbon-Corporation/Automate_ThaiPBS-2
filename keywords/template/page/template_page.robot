@@ -22,7 +22,7 @@ ${import_image_elm}    xpath=//input[@accept="image/jpeg,.jpg,.jpeg,image/png,.p
 ${save_message_template_elm}    xpath=(//button[@type='submit'])[2]
 ${message_elm}    xpath=//*[@placeholder="Greeting"]
 ${save_template_elm}    xpath=(//button[@type='submit'])[1]
-${toast_create_success_elm}    เทมเพลตสร้างสำเร็จแล้ว
+${toast_create_success_elm}    xpath=//*[@class='group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg']
 
 *** Keywords ***
 Click Create Template Button
