@@ -83,3 +83,12 @@ Create Template Style5
     template_page.Input Message Template    ${message_input}
     template_page.Selete Color Template    ${color_input}
     template_page.Click Save Message Template Button
+
+Create Template Custom
+    [Documentation]    Create Template Custom
+    [Arguments]    ${name_message}    ${json_code_to_input}
+    template_page.Click Create Message Template Button
+    template_page.Input Message Template Name    ${name_message}
+    template_page.Click Custom Tab
+    template_page.Input Json Code    ${json_code_to_input}
+    template_page.Click Save Message Template Button
