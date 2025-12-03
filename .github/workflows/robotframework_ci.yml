@@ -32,6 +32,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install robotframework
           pip install robotframework-jsonlibrary
+          pip install robotframework-jsonlibrary simplejson
           pip install -r requirements.txt
           pip list
       - name: Install Chrome browser
