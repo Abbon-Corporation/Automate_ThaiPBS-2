@@ -5,6 +5,7 @@ Library    OperatingSystem
 Library    String
 Library    Collections
 Library    DateTime
+Library    JSONLibrary
 Library    ${CURDIR}/custom_library/env_loader.py
 
 Variables    ${CURDIR}/config.yaml

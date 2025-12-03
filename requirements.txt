@@ -7,3 +7,5 @@ webdriver-manager
 robotframework-robocop==5.8.1
 trcli
 python-dotenv
+robotframework-jsonlibrary
+simplejson
