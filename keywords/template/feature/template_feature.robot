@@ -46,26 +46,40 @@ Create Template Style2
 
 Create Template Style3
     [Documentation]    Create Template Style2
-    [Arguments]    ${name_message}    ${upper_image_path}    ${lower_image_path}    ${message_input}    ${color_input}
+    [Arguments]    ${name_message}    ${left_image_path}    ${right_image_path}    ${message_input}    ${color_input}
     template_page.Click Create Message Template Button
     template_page.Input Message Template Name    ${name_message}
     #template_page.Click Defualt Tab
     template_page.Click Style3
-    template_page.Import Left Image    ${upper_image_path}
-    template_page.Import Hight Image    ${lower_image_path}
+    template_page.Import Left Image    ${left_image_path}
+    template_page.Import Right Image    ${right_image_path}
     template_page.Input Message Template    ${message_input}
     template_page.Selete Color Template    ${color_input}
     template_page.Click Save Message Template Button
 
 Create Template Style4
     [Documentation]    Create Template Style2
-    [Arguments]    ${name_message}    ${upper_image_path}    ${lower_image_path}    ${message_input}    ${color_input}
+    [Arguments]    ${name_message}    ${left_image_path}    ${right_image_path}    ${message_input}    ${color_input}
     template_page.Click Create Message Template Button
     template_page.Input Message Template Name    ${name_message}
     #template_page.Click Defualt Tab
     template_page.Click Style4
-    template_page.Import Left Image    ${upper_image_path}
-    template_page.Import Hight Image    ${lower_image_path}
+    template_page.Import Left Image    ${left_image_path}
+    template_page.Import Right Image    ${right_image_path}
+    template_page.Input Message Template    ${message_input}
+    template_page.Selete Color Template    ${color_input}
+    template_page.Click Save Message Template Button
+
+Create Template Style5
+    [Documentation]    Create Template Style2
+    [Arguments]    ${name_message}    ${left_image_path}    ${right_image_path}    ${lower_image_path}    ${message_input}    ${color_input}
+    template_page.Click Create Message Template Button
+    template_page.Input Message Template Name    ${name_message}
+    #template_page.Click Defualt Tab
+    template_page.Click Style5
+    template_page.Import Left Image    ${left_image_path}
+    template_page.Import Right Image    ${right_image_path}
+    template_page.Import Lower Image    ${lower_image_path}
     template_page.Input Message Template    ${message_input}
     template_page.Selete Color Template    ${color_input}
     template_page.Click Save Message Template Button

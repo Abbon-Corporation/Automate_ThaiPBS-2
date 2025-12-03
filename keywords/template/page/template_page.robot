@@ -157,13 +157,17 @@ Click Style4
     [Documentation]    To click style2
     common.Click Element When Ready    ${style4_elm}
 
+Click Style5
+    [Documentation]    To click style2
+    common.Click Element When Ready    ${style5_elm}
+
 Import Left Image
     [Documentation]    To import image file
     [Arguments]    ${upper_image_path}
     SeleniumLibrary.Wait Until Element Is Enabled    ${import_image_elm}
     SeleniumLibrary.Choose File    ${import_image_elm}    ${upper_image_path}
 
-Import Hight Image
+Import Right Image
     [Documentation]    To import image file
     [Arguments]    ${lower_image_path}
     SeleniumLibrary.Wait Until Element Is Enabled    ${import_image_elm}
