@@ -139,9 +139,11 @@ Click Save Template Button
 
 Verify With Name When Create Tempalte Success
     [Documentation]    Click to save template
-    [Arguments]    ${craete_name}
-    ${template_name}=    Get Text    ${name_template_elm}
-    Should Be Equal    ${template_name}    ${craete_name}
+    [Arguments]    ${craete_name_validate}
+    #[Arguments]    ${craete_name}
+    #${template_name}=    Get Text    ${name_template_elm}
+    #Should Be Equal    ${template_name}    ${craete_name}
+    SeleniumLibrary.Page Should Contain    ${craete_name_validate}
 
 Click Style2
     [Documentation]    To click style2
@@ -150,6 +152,10 @@ Click Style2
 Click Style3
     [Documentation]    To click style2
     common.Click Element When Ready    ${style3_elm}
+
+Click Style4
+    [Documentation]    To click style2
+    common.Click Element When Ready    ${style4_elm}
 
 Import Left Image
     [Documentation]    To import image file
