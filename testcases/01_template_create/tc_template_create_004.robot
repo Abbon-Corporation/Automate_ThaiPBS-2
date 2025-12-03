@@ -13,10 +13,10 @@ TC_Template_create_004 - Login
     home_feature.Tap Main Menu And Submenu    ${home_page['message']}    ${home_page['template_module']}
     template_feature.Click create template button to create page
     ${create_name_validate}=    template_feature.Input Detail Tempale At Schedule Date And Time    ${tc_template_create_004['name_input']}    ${tc_template_create_004['message_input']}
-    template_feature.Create Template Style4    ${tc_template_Create_004['message_name_input']}    ${tc_template_create_004['left_image_path_01']}    ${tc_template_create_004['right_image_path_01']}    ${tc_template_create_004['message_templat_input']}    ${tc_template_create_004['color_01']}
-    template_feature.Create Template Style4    ${tc_template_Create_004['message_name_input']}    ${tc_template_create_004['left_image_path_02']}    ${tc_template_create_004['right_image_path_02']}    ${tc_template_create_004['message_templat_input']}    ${tc_template_create_004['color_02']}
-    template_feature.Create Template Style4    ${tc_template_Create_004['message_name_input']}    ${tc_template_create_004['left_image_path_03']}    ${tc_template_create_004['right_image_path_03']}    ${tc_template_create_004['message_templat_input']}    ${tc_template_create_004['color_03']}
-    template_feature.Create Template Style4    ${tc_template_Create_004['message_name_input']}    ${tc_template_create_004['left_image_path_04']}    ${tc_template_create_004['right_image_path_04']}    ${tc_template_create_004['message_templat_input']}    ${tc_template_create_004['color_04']}
+    template_feature.Create Template Style4    ${tc_template_create_004['message_name_input']}    ${tc_template_create_004['left_image_path_01']}    ${tc_template_create_004['right_image_path_01']}    ${tc_template_create_004['message_templat_input']}    ${tc_template_create_004['color_01']}
+    template_feature.Create Template Style4    ${tc_template_create_004['message_name_input']}    ${tc_template_create_004['left_image_path_02']}    ${tc_template_create_004['right_image_path_02']}    ${tc_template_create_004['message_templat_input']}    ${tc_template_create_004['color_02']}
+    template_feature.Create Template Style4    ${tc_template_create_004['message_name_input']}    ${tc_template_create_004['left_image_path_03']}    ${tc_template_create_004['right_image_path_03']}    ${tc_template_create_004['message_templat_input']}    ${tc_template_create_004['color_03']}
+    template_feature.Create Template Style4    ${tc_template_create_004['message_name_input']}    ${tc_template_create_004['left_image_path_04']}    ${tc_template_create_004['right_image_path_04']}    ${tc_template_create_004['message_templat_input']}    ${tc_template_create_004['color_04']}
     template_page.Click Save Template Button
     Sleep    30
     template_page.Verify With Name When Create Tempalte Success    ${create_name_validate}
