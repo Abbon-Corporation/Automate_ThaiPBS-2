@@ -249,3 +249,9 @@ tc_template_create_017:
   left_image_path_05: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
   right_image_path_05: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
   lower_image_path_05: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png005.png
+
+tc_template_create_018:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json
