@@ -84,6 +84,13 @@ Select End Date +1 At Start Date
     ${end_int}=    Convert To Integer    ${end_day}
     Click Element    xpath=//td/button[@name="day" and normalize-space(text())="${end_int}"]
 
+Select End Date At Tomorrow
+    [Documentation]    Click date picker to selete start date at tomorrow
+    common.Click Element When Ready    ${tap_end_date_elm}
+    ${end_day}=    Get Current Date    result_format=%d    increment=1 days
+    ${end_int}=    Convert To Integer    ${end_day}
+    Click Element    xpath=//td/button[@name="day" and normalize-space(text())="${end_int}"]
+
 Select End Time At Current Button
     [Documentation]    Click date picker to selete start time at current time button
     common.Click Element When Ready    ${tap_end_time_elm}

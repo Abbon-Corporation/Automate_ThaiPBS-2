@@ -8,13 +8,24 @@ Click create template button to create page
     template_page.Verify Page Display Create Tempale Page
 
 Input Detail Tempale At Schedule Date And Time
-    [Documentation]    Input all data to create tempale
+    [Documentation]    Input all data to create tempale at schedule date&time
     [Arguments]    ${name}    ${messge}
     ${name_validate}=    template_page.Input Template Name    ${name}
     template_page.Input Alert Message    ${messge}
     template_page.Select Start Date At Tomorrow
     template_page.Select Start Time At Current Button
     template_page.Select End Date +1 At Start Date
+    template_page.Select End Time At Current Button
+    RETURN   ${name_validate}
+
+Input Detail Tempale At Current Date And Time
+    [Documentation]    Input all data to create tempale at current date&time
+    [Arguments]    ${name}    ${messge}
+    ${name_validate}=    template_page.Input Template Name    ${name}
+    template_page.Input Alert Message    ${messge}
+    template_page.Select Start Date At Current Button
+    template_page.Select Start Time At Current Button
+    template_page.Select End Date At Tomorrow
     template_page.Select End Time At Current Button
     RETURN   ${name_validate}
 
