@@ -103,3 +103,13 @@ Create Template Custom
     template_page.Click Custom Tab
     template_page.Input Json Code    ${json_code_to_input}
     template_page.Click Save Message Template Button
+
+Seach And Inactive Template
+    [Documentation]    Seach by name after that can inactive success
+    [Arguments]    ${search_input}
+    template_page.Search Name Template    ${search_input}
+    template_page.Click More Action
+    template_page.Click Inactive Action Button
+    template_page.Verify Modal Confirm To Inactive
+    template_page.Click Confirm To Inactive Button
+    template_page.Verify Status After Inactive Success
