@@ -34,7 +34,7 @@ ${seach_bt}    xpath=//button[text()="ค้นหา"]
 ${more_action_bt}    xpath=//*[@class='p-1 border border-error-100 rounded cursor-pointer']
 ${inactive_bt}    xpath=//*[@class='relative select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-w-60 flex gap-3 py-2.5 px-4 hover:bg-white cursor-pointer'][4]
 ${confirm_inactive_bt}    xpath=//*[@class="inline-flex items-center justify-center whitespace-nowrap rounded-[4px] transition-colors focus-visible:outline-none disabled:pointer-events-none py-2 disabled:bg-disabled disabled:text-gray-400 disabled:opacity-1 cursor-pointer bg-primary text-white text-lg font-normal px-6"]
-
+${confirm_time_bt}    xpath=//button[text()="ยืนยัน"]
 
 *** Keywords ***
 Click Create Template Button
@@ -82,6 +82,36 @@ Select Start Time At Current Button
     [Documentation]    Click date picker to selete start time at current time button
     common.Click Element When Ready    ${tap_start_time_elm}
     common.Click Element When Ready    ${current_time_elm}
+
+Select Start Time One Minute Later
+    [Documentation]    Select start time at +1 minute from current time (using Python Evaluate)
+    # คำนวณเวลา +1 นาที คืนค่าเป็น HH:MM
+    ${target}=    Evaluate    ( __import__('datetime').datetime.now() + __import__('datetime').timedelta(minutes=1) ).strftime("%H:%M")    sys
+    Log    Target time = ${target}
+    ${hm}=    Split String    ${target}    :
+    ${hour}=    Set Variable    ${hm[0]}
+    ${minute}=  Set Variable    ${hm[1]}
+    common.Click Element When Ready    ${tap_start_time_elm}
+    ${hour_xpath}=    Set Variable    (//div[contains(@class,'flex flex-col overflow-y-auto p-4 max-h-64 no-scrollbar')])[1]//*[text()='${hour}']
+    ${minute_xpath}=  Set Variable    (//div[contains(@class,'flex flex-col overflow-y-auto p-4 max-h-64 no-scrollbar')])[2]//*[text()='${minute}']
+    common.Click Element When Ready    ${hour_xpath}
+    common.Click Element When Ready    ${minute_xpath}
+    common.Click Element When Ready    ${confirm_time_bt}
+
+Select End Time One Minute Later At Start Later Time
+    [Documentation]    Select start time at +1 minute from current time (using Python Evaluate)
+    # คำนวณเวลา +2 นาที คืนค่าเป็น HH:MM
+    ${target}=    Evaluate    ( __import__('datetime').datetime.now() + __import__('datetime').timedelta(minutes=2) ).strftime("%H:%M")    sys
+    Log    Target time = ${target}
+    ${hm}=    Split String    ${target}    :
+    ${hour}=    Set Variable    ${hm[0]}
+    ${minute}=  Set Variable    ${hm[1]}
+    common.Click Element When Ready    ${tap_end_time_elm}
+    ${hour_xpath}=    Set Variable    (//div[contains(@class,'flex flex-col overflow-y-auto p-4 max-h-64 no-scrollbar')])[1]//*[text()='${hour}']
+    ${minute_xpath}=  Set Variable    (//div[contains(@class,'flex flex-col overflow-y-auto p-4 max-h-64 no-scrollbar')])[2]//*[text()='${minute}']
+    common.Click Element When Ready    ${hour_xpath}
+    common.Click Element When Ready    ${minute_xpath}
+    common.Click Element When Ready    ${confirm_time_bt}
 
 Select End Date +1 At Start Date
     [Documentation]    Click date picker to selete start date at tomorrow
@@ -223,5 +253,9 @@ Click Confirm To Inactive Button
     common.Click Element When Ready    ${confirm_inactive_bt}
 
 Verify Status After Inactive Success
-    [Documentation]    Verify modal have contain
+    [Documentation]    Verify the template have contain
     SeleniumLibrary.Page Should Contain    ${template_module['inactive_status']}
+
+Verify Status After Expired Success
+    [Documentation]    Verify the template have contain
+    SeleniumLibrary.Page Should Contain    ${template_module['expired_status']}
