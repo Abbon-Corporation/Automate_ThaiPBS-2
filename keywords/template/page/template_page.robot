@@ -134,6 +134,7 @@ Select End Time At Current Button
 
 Click Create Message Template Button
     [Documentation]    Click create message template button
+    SeleniumLibrary.Scroll Element Into View    ${create_massage_tempalte_bt}
     SeleniumLibrary.Wait Until Element Is Enabled    ${create_massage_tempalte_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
     SeleniumLibrary.Wait Until Element Is Visible    ${create_massage_tempalte_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
     common.Click Element When Ready    ${create_massage_tempalte_bt}
