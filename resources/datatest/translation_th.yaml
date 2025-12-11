@@ -10,3 +10,4 @@ template_module:
   create_txt: สร้างเทมเพลต
   inactive_alert_message: ปิดการใช้งานของเทมเพลตนี้?
   inactive_status: ปิดใช้งาน
+  expired_status: หมดอายุ
