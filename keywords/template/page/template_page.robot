@@ -18,9 +18,9 @@ ${create_massage_tempalte_bt}    xpath=//button[contains(.,'สร้างข�
 ${input_message_tempale_name_elm}    xpath=//input[@name="name"]
 ${defualt_tab}    xpath=//button[contains(.,'Defualt')]
 ${custom_tab}    xpath=//button[contains(.,'Custom')]
-${style1_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][1]
-${style2_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][2]
-${style3_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-primary bg-brand-50"]
+${style1_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-primary bg-brand-50"]
+${style2_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][1]
+${style3_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][2]
 ${style4_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][3]
 ${style5_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][4]
 ${import_image_elm}    xpath=//input[@accept="image/jpeg,.jpg,.jpeg,image/png,.png"]
@@ -29,6 +29,12 @@ ${message_elm}    xpath=//*[@placeholder="Greeting"]
 ${save_template_elm}    xpath=//button[text()="บันทึก"]
 ${name_template_elm}    xpath=//tr[1]//span[@class='line-clamp-1 cursor-pointer hover:underline hover:text-brand']
 ${json_input_elm}    xpath=//*[@placeholder="field.flex_message.custom.json_code"]
+${search_key_elm}    xpath=//input[@placeholder='ค้นหาชื่อเทมเพลต']
+${seach_bt}    xpath=//button[text()="ค้นหา"]
+${more_action_bt}    xpath=//*[@class='p-1 border border-error-100 rounded cursor-pointer']
+${inactive_bt}    xpath=//*[@class='relative select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-w-60 flex gap-3 py-2.5 px-4 hover:bg-white cursor-pointer'][4]
+${confirm_inactive_bt}    xpath=//*[@class="inline-flex items-center justify-center whitespace-nowrap rounded-[4px] transition-colors focus-visible:outline-none disabled:pointer-events-none py-2 disabled:bg-disabled disabled:text-gray-400 disabled:opacity-1 cursor-pointer bg-primary text-white text-lg font-normal px-6"]
+
 
 *** Keywords ***
 Click Create Template Button
@@ -81,6 +87,13 @@ Select End Date +1 At Start Date
     [Documentation]    Click date picker to selete start date at tomorrow
     common.Click Element When Ready    ${tap_end_date_elm}
     ${end_day}=    Get Current Date    result_format=%d    increment=2 days
+    ${end_int}=    Convert To Integer    ${end_day}
+    Click Element    xpath=//td/button[@name="day" and normalize-space(text())="${end_int}"]
+
+Select End Date At Tomorrow
+    [Documentation]    Click date picker to selete start date at tomorrow
+    common.Click Element When Ready    ${tap_end_date_elm}
+    ${end_day}=    Get Current Date    result_format=%d    increment=1 days
     ${end_int}=    Convert To Integer    ${end_day}
     Click Element    xpath=//td/button[@name="day" and normalize-space(text())="${end_int}"]
 
@@ -185,3 +198,30 @@ Input Json Code
     ${data}=    JSONLibrary.Load JSON From File    ${json_code}
     ${data_covert}=    JSONLibrary.Convert Json To String    ${data}
     common.Input Text To Element When Ready   ${json_input_elm}     ${data_covert}
+
+    #Keyword of list page
+Search Name Template
+    [Documentation]    Click status dropdown
+    [Arguments]    ${search_key}
+    common.Input Text To Element When Ready    ${search_key_elm}    ${search_key}
+    common.Click Element When Ready    ${seach_bt}
+
+Click More Action
+    [Documentation]    Click more action button at all record
+    common.Click Element When Ready    ${more_action_bt}
+
+Click Inactive Action Button
+    [Documentation]    Click inactive action button
+    common.Click Element When Ready    ${inactive_bt}
+
+Verify Modal Confirm To Inactive
+    [Documentation]    Verify modal have contain
+    SeleniumLibrary.Page Should Contain    ${template_module['inactive_alert_message']}
+
+Click Confirm To Inactive Button
+    [Documentation]    Click to inactive confirm
+    common.Click Element When Ready    ${confirm_inactive_bt}
+
+Verify Status After Inactive Success
+    [Documentation]    Verify modal have contain
+    SeleniumLibrary.Page Should Contain    ${template_module['inactive_status']}

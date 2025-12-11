@@ -5,7 +5,7 @@ Test setup    common.Open Browser And Navigate To URL    ${url.thaipbs_admin_url
 Test teardown    common.Close Browser And Capture Log
 
 *** Test Cases ***
-TC_Template_create_002 - Ceate
+TC_Template_create_002 - Create
     [Tags]    status:ready    automation_id:tc_template_create_002    test_type:regression    priority:high    platform:int    feature:template    function:template_create
     [Documentation]    สร้าง Template รูปแบบ Style 2 จำนวน 2 ข้อความ ให้มีสถานะยังไม่ถึงเวลา
     login_feature.Input Email Password And Sign In To Login    %{email_admin}    %{password_admin}

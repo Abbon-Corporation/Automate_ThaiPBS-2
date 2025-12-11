@@ -83,3 +83,177 @@ tc_template_create_006:
   message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
   message_name_input: AutomateTest
   json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json
+
+tc_template_create_007:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color: rgb(255, 255, 255)
+  upper_image_path: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  lower_image_path: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+
+tc_template_create_008:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color_01: rgb(142, 209, 252)
+  color_02: rgb(171, 184, 195)
+  color_03: rgb(153, 0, 239)
+  color_04: rgb(235, 20, 76)
+  color_05: rgb(171, 184, 195)
+  left_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  lower_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  left_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  lower_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  left_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  right_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  lower_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png004.png
+  left_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  right_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  lower_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png004.png
+  left_image_path_05: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_05: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  lower_image_path_05: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png005.png
+
+tc_template_create_009:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color_01: rgb(142, 209, 252)
+  color_02: rgb(171, 184, 195)
+  color_03: rgb(153, 0, 239)
+  color_04: rgb(235, 20, 76)
+  left_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  left_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  right_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  left_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  right_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  left_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png004.png
+  right_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png004.png
+
+tc_template_create_010:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color_01: rgb(254, 138, 84)
+  color_02: rgb(252, 185, 0)
+  color_03: rgb(50, 213, 131)
+  left_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  left_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  right_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  left_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  right_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+
+tc_template_create_011:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color_01: rgb(18, 18, 18)
+  color_02: rgb(254, 81, 0)
+  left_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  lower_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  left_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  lower_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+
+tc_template_create_012:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json
+
+tc_template_create_013:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color: rgb(255, 255, 255)
+  upper_image_path: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  lower_image_path: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+
+tc_template_create_014:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color_01: rgb(18, 18, 18)
+  color_02: rgb(254, 81, 0)
+  upper_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  lower_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  upper_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  lower_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+
+tc_template_create_015:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color_01: rgb(254, 138, 84)
+  color_02: rgb(252, 185, 0)
+  color_03: rgb(50, 213, 131)
+  left_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  left_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  right_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  left_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  right_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+
+tc_template_create_016:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color_01: rgb(142, 209, 252)
+  color_02: rgb(171, 184, 195)
+  color_03: rgb(153, 0, 239)
+  color_04: rgb(235, 20, 76)
+  left_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  left_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  right_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  left_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  right_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  left_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png004.png
+  right_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png004.png
+
+tc_template_create_017:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color_01: rgb(142, 209, 252)
+  color_02: rgb(171, 184, 195)
+  color_03: rgb(153, 0, 239)
+  color_04: rgb(235, 20, 76)
+  color_05: rgb(171, 184, 195)
+  left_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  lower_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  left_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  lower_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  left_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  right_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  lower_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png004.png
+  left_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  right_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  lower_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png004.png
+  left_image_path_05: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_05: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  lower_image_path_05: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png005.png
+
+tc_template_create_018:
+  name_input: AutomateTest
+  message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
+  message_name_input: AutomateTest
+  json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json

@@ -8,13 +8,24 @@ Click create template button to create page
     template_page.Verify Page Display Create Tempale Page
 
 Input Detail Tempale At Schedule Date And Time
-    [Documentation]    Input all data to create tempale
+    [Documentation]    Input all data to create tempale at schedule date&time
     [Arguments]    ${name}    ${messge}
     ${name_validate}=    template_page.Input Template Name    ${name}
     template_page.Input Alert Message    ${messge}
     template_page.Select Start Date At Tomorrow
     template_page.Select Start Time At Current Button
     template_page.Select End Date +1 At Start Date
+    template_page.Select End Time At Current Button
+    RETURN   ${name_validate}
+
+Input Detail Tempale At Current Date And Time
+    [Documentation]    Input all data to create tempale at current date&time
+    [Arguments]    ${name}    ${messge}
+    ${name_validate}=    template_page.Input Template Name    ${name}
+    template_page.Input Alert Message    ${messge}
+    template_page.Select Start Date At Current Button
+    template_page.Select Start Time At Current Button
+    template_page.Select End Date At Tomorrow
     template_page.Select End Time At Current Button
     RETURN   ${name_validate}
 
@@ -92,3 +103,13 @@ Create Template Custom
     template_page.Click Custom Tab
     template_page.Input Json Code    ${json_code_to_input}
     template_page.Click Save Message Template Button
+
+Seach And Inactive Template
+    [Documentation]    Seach by name after that can inactive success
+    [Arguments]    ${search_input}
+    template_page.Search Name Template    ${search_input}
+    template_page.Click More Action
+    template_page.Click Inactive Action Button
+    template_page.Verify Modal Confirm To Inactive
+    template_page.Click Confirm To Inactive Button
+    template_page.Verify Status After Inactive Success
