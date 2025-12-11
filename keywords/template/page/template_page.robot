@@ -14,7 +14,7 @@ ${tap_end_date_elm}    xpath=//button[contains(.,'ระบุวันที่
 ${tap_start_time_elm}    xpath=//input[@placeholder='ระบุเวลาเริ่มต้น']
 ${current_time_elm}    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-[4px] transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground px-4 py-2 text-primary text-sm font-normal']
 ${tap_end_time_elm}    xpath=//input[@placeholder='ระบุเวลาสิ้นสุด']
-${create_massage_tempalte_bt}    xpath=//button[contains(.,'สร้างข้อความอวยพร')]
+${create_massage_tempalte_bt}    xpath=//button[@class='w-full h-14 border border-dashed border-primary text-primary rounded-md hover:bg-brand-50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent']
 ${input_message_tempale_name_elm}    xpath=//input[@name="name"]
 ${defualt_tab}    xpath=//button[contains(.,'Defualt')]
 ${custom_tab}    xpath=//button[contains(.,'Custom')]
@@ -135,6 +135,7 @@ Select End Time At Current Button
 Click Create Message Template Button
     [Documentation]    Click create message template button
     SeleniumLibrary.Wait Until Element Is Enabled    ${create_massage_tempalte_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${create_massage_tempalte_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
     common.Click Element When Ready    ${create_massage_tempalte_bt}
 
 Input Message Template Name

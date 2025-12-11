@@ -320,12 +320,12 @@ tc_template_create_025:
   color_02: rgb(171, 184, 195)
   color_03: rgb(153, 0, 239)
   color_04: rgb(235, 20, 76)
-  upper_image_path_01: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
-  lower_image_path_01: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
-  upper_image_path_02: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
-  lower_image_path_02: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
-  left_image_path_03: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/png003.png
-  right_image_path_03: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/png003.png
-  left_image_path_04: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/png004.png
-  right_image_path_04: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/png004.png
-  json_input: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/json_code.json
+  upper_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  lower_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  upper_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  lower_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  left_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  right_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  left_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png004.png
+  right_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png004.png
+  json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json
