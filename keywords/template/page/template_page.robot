@@ -35,8 +35,13 @@ ${more_action_bt}    xpath=//*[@class='p-1 border border-error-100 rounded curso
 ${inactive_bt}    xpath=//*[@class='relative select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-w-60 flex gap-3 py-2.5 px-4 hover:bg-white cursor-pointer'][4]
 ${confirm_inactive_bt}    xpath=//*[@class="inline-flex items-center justify-center whitespace-nowrap rounded-[4px] transition-colors focus-visible:outline-none disabled:pointer-events-none py-2 disabled:bg-disabled disabled:text-gray-400 disabled:opacity-1 cursor-pointer bg-primary text-white text-lg font-normal px-6"]
 ${confirm_time_bt}    xpath=//button[text()="ยืนยัน"]
+${dropdown_status_bt}    xpath=//button[@class='flex w-full items-center justify-between whitespace-nowrap border border-border data-[state=open]:border-primary bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 data-[placeholder]:text-black-alpha-100 aria-[invalid=true]:border-error h-10 rounded shadow-none']
+${edit_bt}    xpath=//*[@class='relative select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-w-60 flex gap-3 py-2.5 px-4 hover:bg-white cursor-pointer'][2]
+${start_date_el}    xpath=//*[@class="inline-flex items-center whitespace-nowrap transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 px-4 py-2 w-full h-10 text-sm text-black placeholder:text-black-alpha-100 font-normal justify-start text-left bg-white border border-border shadow-none rounded"]
+${edit_icon_first}    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-[4px] text-lg font-normal transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 border bg-transparent text-primary shadow-sm hover:bg-accent hover:text-accent-foreground border-color-border-split-brand size-[30px]'][1]
 
 *** Keywords ***
+#Keyword of create page
 Click Create Template Button
     [Documentation]    Can click create template button
     SeleniumLibrary.Wait Until Element Is Enabled    ${craete_template_bt}
@@ -232,9 +237,9 @@ Input Json Code
     ${data_covert}=    JSONLibrary.Convert Json To String    ${data}
     common.Input Text To Element When Ready   ${json_input_elm}     ${data_covert}
 
-    #Keyword of list page
+#Keyword of list page
 Search Name Template
-    [Documentation]    Click status dropdown
+    [Documentation]    Search Name
     [Arguments]    ${search_key}
     common.Input Text To Element When Ready    ${search_key_elm}    ${search_key}
     common.Click Element When Ready    ${seach_bt}
@@ -262,3 +267,56 @@ Verify Status After Inactive Success
 Verify Status After Expired Success
     [Documentation]    Verify the template have contain
     SeleniumLibrary.Page Should Contain    ${template_module['expired_status']}
+
+Click Status Dropdown
+    [Documentation]    Click dropdown status
+    common.Click Element When Ready    ${dropdown_status_bt}
+
+Select Status From Status Dropdown List
+    [Documentation]    Click to select status
+    [Arguments]    ${status_select}
+    Execute Javascript    const el = document.querySelector("select"); el.value = "${status_select}";
+    Execute Javascript    document.querySelector("select").dispatchEvent(new Event("change", { bubbles:true }));
+    common.Click Element When Ready    ${seach_bt}
+
+Click Edit Button On More Action
+    [Documentation]    Click edit button
+    common.Click Element When Ready    ${edit_bt}
+
+#keyword of edit page
+Verify Edit Page Should Have Contain
+    [Documentation]    Verify contain at edit page
+    SeleniumLibrary.Wait Until Element Is Enabled    ${input_tempale_name_elm}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${input_tempale_name_elm}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Page Should Contain    ${template_module['edit_page']}
+
+Clear Template Name
+    [Documentation]    Clear data on template name
+    common.Input Text To Element When Ready   ${input_tempale_name_elm}   ${EMPTY}
+
+Clear Alert Message
+    [Documentation]    Clear data on alert message
+    common.Input Text To Element When Ready   ${input_message_elm}   ${EMPTY}
+
+Edit Start Date At Current Button
+    [Documentation]    Click date picker to selete start date
+    SeleniumLibrary.Scroll Element Into View    ${start_date_el}
+    common.Click Element When Ready    ${start_date_el}
+    common.Click Element When Ready    ${current_day_elm}
+
+Click Edit Template Message Icon
+    [Documentation]    Click to edit tempale at fist record
+    SeleniumLibrary.Scroll Element Into View    ${edit_icon_first}
+    common.Click Element When Ready    ${edit_icon_first}
+
+Edit Message Template Name
+    [Documentation]    Edit Message Template Name
+    [Arguments]    ${name_message_edit}
+    common.Input Text To Element When Ready   ${input_message_tempale_name_elm}   ${EMPTY}
+    ${randome}=    Evaluate    random.randint(1000, 9999)    modules=random
+    common.Input Text To Element When Ready   ${input_message_tempale_name_elm}     ${name_message_edit}${randome}
+
+Verify With Name When Edit Tempalte Success
+    [Documentation]    Click to save template
+    [Arguments]    ${edit_name_validate}
+    SeleniumLibrary.Page Should Contain    ${edit_name_validate}

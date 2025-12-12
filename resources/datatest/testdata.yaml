@@ -1,5 +1,5 @@
 tc_template_create_001:
-  name_input: AutomateTest
+  name_input: AutomateTest01  #ตั้งชื่อให้ tc_template_ำกระ_001 เอาไปแก้ไข
   message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
   message_name_input: AutomateTest
   message_templat_input: AutomateTest
@@ -79,7 +79,7 @@ tc_template_create_005:
   lower_image_path_05: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png005.png
 
 tc_template_create_006:
-  name_input: AutomateTest
+  name_input: AutomateTestCustom
   message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
   message_name_input: AutomateTest
   json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json
@@ -329,3 +329,11 @@ tc_template_create_025:
   left_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png004.png
   right_image_path_04: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png004.png
   json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json
+
+tc_template_edit_001:
+  status_schedule: SCHEDULE
+  name_input: Automate_Edit_To_Default_type
+  message_input: Automate_Edit!@#$%^&**(())_+
+  name_of_defualt_type: AutomateTest01  #ค้นหาเอา tc_template_create_001 มาแก้ไข
+  message_name_input: AutomateTestCustom
+  json_input: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/json_code.json
