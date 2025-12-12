@@ -19,4 +19,3 @@ TC_Template_edit_001 - Edit
     template_page.Click Save Template Button
     Sleep    30
     template_page.Verify With Name When Edit Tempalte Success    ${create_name_validate}
-    
