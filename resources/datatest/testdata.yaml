@@ -159,12 +159,12 @@ tc_template_create_011:
   message_templat_input: AutomateTest
   color_01: rgb(18, 18, 18)
   color_02: rgb(254, 81, 0)
-  left_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
-  right_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
-  lower_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
-  left_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
-  right_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
-  lower_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
+  left_image_path_01: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_01: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  lower_image_path_01: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/png003.png
+  left_image_path_02: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  right_image_path_02: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/jpeg002.jpeg
+  lower_image_path_02: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/png003.png
 
 tc_template_create_012:
   name_input: AutomateTest
@@ -336,4 +336,4 @@ tc_template_edit_001:
   message_input: Automate_Edit!@#$%^&**(())_+
   name_of_defualt_type: AutomateTest01  #ค้นหาเอา tc_template_create_001 มาแก้ไข
   message_name_input: AutomateTestCustom
-  json_input: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/json_code.json
+  json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json

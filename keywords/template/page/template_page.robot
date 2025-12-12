@@ -250,6 +250,8 @@ Click More Action
 
 Click Inactive Action Button
     [Documentation]    Click inactive action button
+    SeleniumLibrary.Wait Until Element Is Enabled    ${inactive_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${inactive_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
     common.Click Element When Ready    ${inactive_bt}
 
 Verify Modal Confirm To Inactive
