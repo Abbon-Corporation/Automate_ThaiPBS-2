@@ -11,3 +11,9 @@ template_module:
   inactive_alert_message: ปิดการใช้งานของเทมเพลตนี้?
   inactive_status: ปิดใช้งาน
   expired_status: หมดอายุ
+  status_all: ALL
+  status_schedule: SCHEDULE
+  status_inactive: INACTIVE
+  status_active: ACTIVE
+  status_exprie: EXPIRE
+  edit_page: แก้ไขเทมเพลต
