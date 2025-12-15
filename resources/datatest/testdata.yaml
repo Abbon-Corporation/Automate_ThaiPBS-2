@@ -332,7 +332,7 @@ tc_template_create_025:
 
 tc_template_edit_001:
   status_schedule: SCHEDULE
-  name_input: Automate_Edit_To_Default_type
+  name_input: AutomateEdit
   message_input: Automate_Edit!@#$%^&**(())_+
   name_of_defualt_type: AutomateTest01  #ค้นหาเอา tc_template_create_001 มาแก้ไข
   message_name_input: AutomateTestCustom
