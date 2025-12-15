@@ -18,5 +18,5 @@ TC_Template_create_009 - Create
     template_feature.Create Template Style3    ${tc_template_create_009['message_name_input']}    ${tc_template_create_009['left_image_path_03']}    ${tc_template_create_009['right_image_path_03']}    ${tc_template_create_009['message_templat_input']}    ${tc_template_create_009['color_03']}
     template_feature.Create Template Style3    ${tc_template_create_009['message_name_input']}    ${tc_template_create_009['left_image_path_04']}    ${tc_template_create_009['right_image_path_04']}    ${tc_template_create_009['message_templat_input']}    ${tc_template_create_009['color_04']}
     template_page.Click Save Template Button
-    Sleep    30
+    Sleep    40
     template_page.Verify With Name When Create Tempalte Success    ${create_name_validate}

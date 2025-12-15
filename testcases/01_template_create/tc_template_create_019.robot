@@ -15,7 +15,7 @@ TC_Template_create_019 - Create
     ${create_name_validate}=    template_feature.Input Detail Tempale At Schedule Date And Time To Expired 1 Min    ${tc_template_create_019['name_input']}    ${tc_template_create_019['message_input']}
     template_feature.Create Template Style1    ${tc_template_create_019['message_name_input']}    ${tc_template_create_019['upper_image_path']}    ${tc_template_create_019['lower_image_path']}    ${tc_template_create_019['message_templat_input']}    ${tc_template_create_019['color']}
     template_page.Click Save Template Button
-    Sleep    30
+    Sleep    40
     template_page.Verify With Name When Create Tempalte Success    ${create_name_validate}
     Sleep    140    #รอเวลาให้เปลี่ยนเป็น กำลังใช้งาน แล้วเปลี่ยนเป็น หมดเวลา
     template_feature.Seach And Wait For Expired Template    ${create_name_validate}

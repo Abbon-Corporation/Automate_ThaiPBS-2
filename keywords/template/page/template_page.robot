@@ -25,14 +25,15 @@ ${style4_elm}    xpath=//*[@class="flex flex-col items-center justify-between ga
 ${style5_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][4]
 ${import_image_elm}    xpath=//input[@accept="image/jpeg,.jpg,.jpeg,image/png,.png"]
 ${save_message_template_elm}    xpath=(//button[@type='submit'])[2]
-${message_elm}    xpath=//*[@placeholder="Greeting"]
+${message_elm}    xpath=//*[@class="flex min-h-[60px] rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-color-text-disabled focus-visible:outline-none focus-visible:border-primary disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid=true]:border-error w-full"]
 ${save_template_elm}    xpath=//button[text()="บันทึก"]
 ${name_template_elm}    xpath=//tr[1]//span[@class='line-clamp-1 cursor-pointer hover:underline hover:text-brand']
 ${json_input_elm}    xpath=//*[@placeholder="field.flex_message.custom.json_code"]
 ${search_key_elm}    xpath=//input[@placeholder='ค้นหาชื่อเทมเพลต']
 ${seach_bt}    xpath=//button[text()="ค้นหา"]
 ${more_action_bt}    xpath=//*[@class='p-1 border border-error-100 rounded cursor-pointer']
-${inactive_bt}    xpath=//*[@class='relative select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-w-60 flex gap-3 py-2.5 px-4 hover:bg-white cursor-pointer'][4]
+${inactive_bt01}    xpath=//*[@class='relative select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-w-60 flex gap-3 py-2.5 px-4 hover:bg-white cursor-pointer'][4]
+${inactive_bt02}    xpath=//*[@class='relative select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-w-60 flex gap-3 py-2.5 px-4 hover:bg-white cursor-pointer'][3] 
 ${confirm_inactive_bt}    xpath=//*[@class="inline-flex items-center justify-center whitespace-nowrap rounded-[4px] transition-colors focus-visible:outline-none disabled:pointer-events-none py-2 disabled:bg-disabled disabled:text-gray-400 disabled:opacity-1 cursor-pointer bg-primary text-white text-lg font-normal px-6"]
 ${confirm_time_bt}    xpath=//button[text()="ยืนยัน"]
 ${dropdown_status_bt}    xpath=//button[@class='flex w-full items-center justify-between whitespace-nowrap border border-border data-[state=open]:border-primary bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 data-[placeholder]:text-black-alpha-100 aria-[invalid=true]:border-error h-10 rounded shadow-none']
@@ -177,6 +178,7 @@ Import Lower Image
 Input Message Template
     [Documentation]    To input message
     [Arguments]    ${message_input}
+    SeleniumLibrary.Scroll Element Into View    ${message_elm}
     common.Input Text To Element When Ready    ${message_elm}    ${message_input}
 
 Selete Color Template
@@ -249,10 +251,16 @@ Click More Action
     common.Click Element When Ready    ${more_action_bt}
 
 Click Inactive Action Button
-    [Documentation]    Click inactive action button
-    SeleniumLibrary.Wait Until Element Is Enabled    ${inactive_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
-    SeleniumLibrary.Wait Until Element Is Visible    ${inactive_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
-    common.Click Element When Ready    ${inactive_bt}
+    [Documentation]    Click inactive action button for schedule status
+    SeleniumLibrary.Wait Until Element Is Enabled    ${inactive_bt01}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${inactive_bt01}    ${GLOBAL_CONFIG['TIME_OUT']}
+    common.Click Element When Ready    ${inactive_bt01}
+
+Click Inactive Action Button For Active Status Record
+    [Documentation]    Click inactive action button for active status
+    SeleniumLibrary.Wait Until Element Is Enabled    ${inactive_bt02}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${inactive_bt02}    ${GLOBAL_CONFIG['TIME_OUT']}
+    common.Click Element When Ready    ${inactive_bt02}
 
 Verify Modal Confirm To Inactive
     [Documentation]    Verify modal have contain

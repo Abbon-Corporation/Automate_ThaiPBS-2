@@ -116,11 +116,21 @@ Create Template Custom
     template_page.Click Save Message Template Button
 
 Seach And Inactive Template
-    [Documentation]    Seach by name after that can inactive success
-    [Arguments]    ${search_input}
-    template_page.Search Name Template    ${search_input}
+    [Documentation]    Seach by name after that can inactive success for schedule status
+    [Arguments]    ${search_input01}
+    template_page.Search Name Template    ${search_input01}
     template_page.Click More Action
     template_page.Click Inactive Action Button
+    template_page.Verify Modal Confirm To Inactive
+    template_page.Click Confirm To Inactive Button
+    template_page.Verify Status After Inactive Success
+
+Seach And Inactive Template For Active Status Record
+    [Documentation]    Seach by name after that can inactive success for schedule status
+    [Arguments]    ${search_input02}
+    template_page.Search Name Template    ${search_input02}
+    template_page.Click More Action
+    template_page.Click Inactive Action Button For Active Status Record
     template_page.Verify Modal Confirm To Inactive
     template_page.Click Confirm To Inactive Button
     template_page.Verify Status After Inactive Success

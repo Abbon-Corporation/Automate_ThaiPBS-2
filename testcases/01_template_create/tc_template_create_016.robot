@@ -18,6 +18,6 @@ TC_Template_create_016 - Create
     template_feature.Create Template Style4    ${tc_template_create_016['message_name_input']}    ${tc_template_create_016['left_image_path_03']}    ${tc_template_create_016['right_image_path_03']}    ${tc_template_create_016['message_templat_input']}    ${tc_template_create_016['color_03']}
     template_feature.Create Template Style4    ${tc_template_create_016['message_name_input']}    ${tc_template_create_016['left_image_path_04']}    ${tc_template_create_016['right_image_path_04']}    ${tc_template_create_016['message_templat_input']}    ${tc_template_create_016['color_04']}
     template_page.Click Save Template Button
-    Sleep    30
+    Sleep    40
     template_page.Verify With Name When Create Tempalte Success    ${create_name_validate}
-    template_feature.Seach And Inactive Template    ${create_name_validate}
+    template_feature.Seach And Inactive Template For Active Status Record    ${create_name_validate}

@@ -17,5 +17,5 @@ TC_Template_edit_001 - Edit
     template_feature.Edit Template Message DefualtType To CustomType    ${tc_template_edit_001['message_name_input']}    ${tc_template_edit_001['json_input']}
     Sleep    2
     template_page.Click Save Template Button
-    Sleep    30
+    Sleep    40
     template_page.Verify With Name When Edit Tempalte Success    ${create_name_validate}
