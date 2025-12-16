@@ -337,3 +337,7 @@ tc_template_edit_001:
   name_of_defualt_type: AutomateTest01  #ค้นหาเอา tc_template_create_001 มาแก้ไข
   message_name_input: AutomateTestCustom
   json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json
+
+tc_template_edit_002:
+  status_active: ACTIVE
+  edit_action: ['แก้ไข']

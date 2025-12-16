@@ -186,3 +186,16 @@ Edit Template Message DefualtType To CustomType
     template_page.Click Custom Tab
     template_page.Input Json Code    ${json_code_to_input}
     template_page.Click Save Message Template Button
+
+Verify Template Should Not Have Action Button
+    [Documentation]    The template status should not have
+    [Arguments]    ${invalid_action}
+    template_page.Click More Action
+    ${action_data_list}=    template_page.Get More Action Button Form Template
+    template_page.Verify Value Of More Action Should Not Have Button    ${invalid_action}    ${action_data_list}
+
+Verify Edit Button On View Page Should Not Have
+    [Documentation]    The Edit Button Should Not Have
+    template_page.Click View Detail Icon
+    Sleep    3
+    template_page.Verify Edit Button On View Page Should Not Have
