@@ -19,7 +19,7 @@ TC_Template_create_0225 - Create
     template_feature.Create Template Style4    ${tc_template_create_025['message_name_input']}    ${tc_template_create_025['left_image_path_04']}    ${tc_template_create_025['right_image_path_04']}    ${tc_template_create_025['message_templat_input']}    ${tc_template_create_025['color_04']}
     template_feature.Create Template Custom    ${tc_template_create_025['message_name_input']}    ${tc_template_create_025['json_input']}
     template_page.Click Save Template Button
-    Sleep    30
+    Sleep    40
     template_page.Verify With Name When Create Tempalte Success    ${create_name_validate}
     Sleep    140    #รอเวลาให้เปลี่ยนเป็น กำลังใช้งาน แล้วเปลี่ยนเป็น หมดเวลา
     template_feature.Seach And Wait For Expired Template    ${create_name_validate}

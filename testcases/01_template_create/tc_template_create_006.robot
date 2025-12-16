@@ -16,5 +16,5 @@ TC_Template_create_006 - Create
     template_feature.Create Template Custom    ${tc_template_create_006['message_name_input']}    ${tc_template_create_006['json_input']}
     Sleep    2
     template_page.Click Save Template Button
-    Sleep    30
+    Sleep    40
     template_page.Verify With Name When Create Tempalte Success    ${create_name_validate}

@@ -116,11 +116,21 @@ Create Template Custom
     template_page.Click Save Message Template Button
 
 Seach And Inactive Template
-    [Documentation]    Seach by name after that can inactive success
-    [Arguments]    ${search_input}
-    template_page.Search Name Template    ${search_input}
+    [Documentation]    Seach by name after that can inactive success for schedule status
+    [Arguments]    ${search_input01}
+    template_page.Search Name Template    ${search_input01}
     template_page.Click More Action
     template_page.Click Inactive Action Button
+    template_page.Verify Modal Confirm To Inactive
+    template_page.Click Confirm To Inactive Button
+    template_page.Verify Status After Inactive Success
+
+Seach And Inactive Template For Active Status Record
+    [Documentation]    Seach by name after that can inactive success for schedule status
+    [Arguments]    ${search_input02}
+    template_page.Search Name Template    ${search_input02}
+    template_page.Click More Action
+    template_page.Click Inactive Action Button For Active Status Record
     template_page.Verify Modal Confirm To Inactive
     template_page.Click Confirm To Inactive Button
     template_page.Verify Status After Inactive Success
@@ -130,3 +140,49 @@ Seach And Wait For Expired Template
     [Arguments]    ${search_key}
     template_page.Search Name Template    ${search_key}
     template_page.Verify Status After Expired Success
+
+Filter At Status And Click To Edit Page
+    [Documentation]    Filter at status and go to edit page
+    [Arguments]    ${status_to_select}    ${custon_type_name}
+    template_page.Select Status From Status Dropdown List    ${status_to_select}
+    template_page.Search Name Template    ${custon_type_name}
+    template_page.Click More Action
+    template_page.Click Edit Button On More Action
+    template_page.Verify Edit Page Should Have Contain
+
+Clear Detail Tempale
+    [Documentation]    Clear name and alert message
+    template_page.Clear Template Name
+    template_page.Clear Alert Message
+
+Edit Detail Tempale At Current Date And Time
+    [Documentation]    Input all data to create tempale at current date&time
+    [Arguments]    ${name04}    ${messge04}
+    ${name_validate02}=    template_page.Input Template Name    ${name04}
+    template_page.Input Alert Message    ${messge04}
+    template_page.Edit Start Date At Current Button
+    template_page.Select Start Time At Current Button
+    template_page.Select End Date At Tomorrow
+    template_page.Select End Time At Current Button
+    RETURN   ${name_validate02}
+
+Edit Template Message CustomType To DefualtType
+    [Documentation]    Edit template custom type to default type
+    [Arguments]    ${edit_name_message06}    ${upper_image_path06}    ${lower_image_path06}    ${message_input06}    ${color_input06}
+    template_page.Click Edit Template Message Icon
+    template_page.Edit Message Template Name    ${edit_name_message06}
+    template_page.Click Defualt Tab
+    template_page.Import Upper Image    ${upper_image_path06}
+    template_page.Import Lower Image    ${lower_image_path06}
+    template_page.Input Message Template    ${message_input06}
+    template_page.Selete Color Template    ${color_input06}
+    template_page.Click Save Message Template Button
+
+Edit Template Message DefualtType To CustomType
+    [Documentation]    Edit template default type to custom type
+    [Arguments]    ${edit_name_message07}    ${json_code_to_input}
+    template_page.Click Edit Template Message Icon
+    template_page.Edit Message Template Name    ${edit_name_message07}
+    template_page.Click Custom Tab
+    template_page.Input Json Code    ${json_code_to_input}
+    template_page.Click Save Message Template Button
