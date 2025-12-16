@@ -15,5 +15,5 @@ TC_Template_create_001 - Create
     ${create_name_validate}=    template_feature.Input Detail Tempale At Schedule Date And Time    ${tc_template_create_001['name_input']}    ${tc_template_create_001['message_input']}
     template_feature.Create Template Style1    ${tc_template_create_001['message_name_input']}    ${tc_template_create_001['upper_image_path']}    ${tc_template_create_001['lower_image_path']}    ${tc_template_create_001['message_templat_input']}    ${tc_template_create_001['color']}
     template_page.Click Save Template Button
-    Sleep    40
+    Sleep    30
     template_page.Verify With Name When Create Tempalte Success    ${create_name_validate}

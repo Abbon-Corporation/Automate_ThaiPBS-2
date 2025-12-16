@@ -40,6 +40,8 @@ ${dropdown_status_bt}    xpath=//button[@class='flex w-full items-center justify
 ${edit_bt}    xpath=//*[@class='relative select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-w-60 flex gap-3 py-2.5 px-4 hover:bg-white cursor-pointer'][2]
 ${start_date_el}    xpath=//*[@class="inline-flex items-center whitespace-nowrap transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 px-4 py-2 w-full h-10 text-sm text-black placeholder:text-black-alpha-100 font-normal justify-start text-left bg-white border border-border shadow-none rounded"]
 ${edit_icon_first}    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-[4px] text-lg font-normal transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 border bg-transparent text-primary shadow-sm hover:bg-accent hover:text-accent-foreground border-color-border-split-brand size-[30px]'][1]
+${side_menu_icon}    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap text-lg font-normal transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 absolute top-14 -right-4 size-8 rounded-full cursor-pointer bg-s-primary hover:bg-s-primary-accent dark:border dark:border-b-primary shadow-lg']
+${template_list_txt}    xpath=//*[text()="การจัดการข้อความอวยพร"]
 
 *** Keywords ***
 #Keyword of create page
@@ -199,9 +201,9 @@ Click Save Template Button
 Verify With Name When Create Tempalte Success
     [Documentation]    Click to save template
     [Arguments]    ${craete_name_validate}
-    #[Arguments]    ${craete_name}
-    #${template_name}=    Get Text    ${name_template_elm}
-    #Should Be Equal    ${template_name}    ${craete_name}
+    common.Wait Until Element Is Ready For Interaction    ${template_list_txt}
+    common.Click Element When Ready    ${side_menu_icon}
+    Sleep    2
     SeleniumLibrary.Page Should Contain    ${craete_name_validate}
 
 Click Style2
@@ -329,4 +331,5 @@ Edit Message Template Name
 Verify With Name When Edit Tempalte Success
     [Documentation]    Click to save template
     [Arguments]    ${edit_name_validate}
+    common.Input Text To Element When Ready    ${side_menu_icon}
     SeleniumLibrary.Page Should Contain    ${edit_name_validate}
