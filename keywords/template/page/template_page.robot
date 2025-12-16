@@ -331,5 +331,5 @@ Edit Message Template Name
 Verify With Name When Edit Tempalte Success
     [Documentation]    Click to save template
     [Arguments]    ${edit_name_validate}
-    common.Input Text To Element When Ready    ${side_menu_icon}
+    common.Click Element When Ready    ${side_menu_icon}
     SeleniumLibrary.Page Should Contain    ${edit_name_validate}
