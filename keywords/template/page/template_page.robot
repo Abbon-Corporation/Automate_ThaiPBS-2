@@ -16,7 +16,7 @@ ${current_time_elm}    xpath=//button[@class='inline-flex items-center justify-c
 ${tap_end_time_elm}    xpath=//input[@placeholder='ระบุเวลาสิ้นสุด']
 ${create_massage_tempalte_bt}    xpath=//button[@class='w-full h-14 border border-dashed border-primary text-primary rounded-md hover:bg-brand-50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent']
 ${input_message_tempale_name_elm}    xpath=//input[@name="name"]
-${defualt_tab}    xpath=//button[contains(.,'Defualt')]
+${defualt_tab}    xpath=//button[text()="Default"]
 ${custom_tab}    xpath=//button[contains(.,'Custom')]
 ${style1_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-primary bg-brand-50"]
 ${style2_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][1]
@@ -45,6 +45,7 @@ ${side_menu_icon}    xpath=//button[@class='inline-flex items-center justify-cen
 ${template_list_txt}    xpath=//*[text()="การจัดการข้อความอวยพร"]
 ${more_action_el}    xpath=//div[@role='menuitem']
 ${edit_button_view_page}    xpath=//button[text()="แก้ไข"]
+${publish_bt}    xpath=//div[@role='menuitem'][4]
 
 *** Keywords ***
 #Keyword of create page
@@ -261,6 +262,12 @@ Click Inactive Action Button
     SeleniumLibrary.Wait Until Element Is Visible    ${inactive_bt01}    ${GLOBAL_CONFIG['TIME_OUT']}
     common.Click Element When Ready    ${inactive_bt01}
 
+Click Publish Action Button
+    [Documentation]    Click inactive action button for schedule status
+    SeleniumLibrary.Wait Until Element Is Enabled    ${publish_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${publish_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    common.Click Element When Ready    ${publish_bt}
+
 Click Inactive Action Button For Active Status Record
     [Documentation]    Click inactive action button for active status
     SeleniumLibrary.Wait Until Element Is Enabled    ${inactive_bt02}    ${GLOBAL_CONFIG['TIME_OUT']}
@@ -278,6 +285,10 @@ Click Confirm To Inactive Button
 Verify Status After Inactive Success
     [Documentation]    Verify the template have contain
     SeleniumLibrary.Page Should Contain    ${template_module['inactive_status']}
+
+Verify Status After Active Success
+    [Documentation]    Verify the template have contain
+    SeleniumLibrary.Page Should Contain    ${template_module['active_status']}
 
 Verify Status After Expired Success
     [Documentation]    Verify the template have contain

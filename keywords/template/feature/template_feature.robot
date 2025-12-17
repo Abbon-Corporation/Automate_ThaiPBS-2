@@ -40,6 +40,17 @@ Input Detail Tempale At Schedule Date And Time To Expired 1 Min
     template_page.Select End Time One Minute Later At Start Later Time
     RETURN   ${name_validate03}
 
+Edit Detail Tempale At Schedule Date And Time To Expired 1 Min
+    [Documentation]    Input all data to create tempale at schedule date and time to expired 1 min
+    [Arguments]    ${name04}    ${messge04}
+    ${name_validate04}=    template_page.Input Template Name    ${name04}
+    template_page.Input Alert Message    ${messge04}
+    template_page.Edit Start Date At Current Button
+    template_page.Select Start Time One Minute Later
+    template_page.Select End Date At Current Button
+    template_page.Select End Time One Minute Later At Start Later Time
+    RETURN   ${name_validate04}
+
 Create Template Style1
     [Documentation]    Create Template Style1
     [Arguments]    ${name_message01}    ${upper_image_path01}    ${lower_image_path01}    ${message_input01}    ${color_input01}
@@ -124,6 +135,13 @@ Seach And Inactive Template
     template_page.Verify Modal Confirm To Inactive
     template_page.Click Confirm To Inactive Button
     template_page.Verify Status After Inactive Success
+    
+Seach And Publish Template
+    [Documentation]    Seach by name after that can publish success for inactive status
+    [Arguments]    ${search_input01}
+    template_page.Search Name Template    ${search_input01}
+    template_page.Click More Action
+    template_page.Click Publish Action Button
 
 Seach And Inactive Template For Active Status Record
     [Documentation]    Seach by name after that can inactive success for schedule status
@@ -135,10 +153,16 @@ Seach And Inactive Template For Active Status Record
     template_page.Click Confirm To Inactive Button
     template_page.Verify Status After Inactive Success
 
+Seach And Wait For Active Template
+    [Documentation]    Seach by name after that the template update to expired status
+    [Arguments]    ${search_key01}
+    template_page.Search Name Template    ${search_key01}
+    template_page.Verify Status After Expired Success
+
 Seach And Wait For Expired Template
     [Documentation]    Seach by name after that the template update to expired status
-    [Arguments]    ${search_key}
-    template_page.Search Name Template    ${search_key}
+    [Arguments]    ${search_key02}
+    template_page.Search Name Template    ${search_key02}
     template_page.Verify Status After Expired Success
 
 Filter At Status And Click To Edit Page
@@ -166,18 +190,6 @@ Edit Detail Tempale At Current Date And Time
     template_page.Select End Time At Current Button
     RETURN   ${name_validate02}
 
-Edit Template Message CustomType To DefualtType
-    [Documentation]    Edit template custom type to default type
-    [Arguments]    ${edit_name_message06}    ${upper_image_path06}    ${lower_image_path06}    ${message_input06}    ${color_input06}
-    template_page.Click Edit Template Message Icon
-    template_page.Edit Message Template Name    ${edit_name_message06}
-    template_page.Click Defualt Tab
-    template_page.Import Upper Image    ${upper_image_path06}
-    template_page.Import Lower Image    ${lower_image_path06}
-    template_page.Input Message Template    ${message_input06}
-    template_page.Selete Color Template    ${color_input06}
-    template_page.Click Save Message Template Button
-
 Edit Template Message DefualtType To CustomType
     [Documentation]    Edit template default type to custom type
     [Arguments]    ${edit_name_message07}    ${json_code_to_input}
@@ -199,3 +211,16 @@ Verify Edit Button On View Page Should Not Have
     template_page.Click View Detail Icon
     Sleep    3
     template_page.Verify Edit Button On View Page Should Not Have
+
+Edit Template Message CustomType To DefualtType
+    [Documentation]    Edit template custom type to default type
+    [Arguments]    ${edit_name_message08}    ${upper_image_path08}    ${lower_image_path08}    ${message_input08}    ${color_input08}
+    template_page.Click Edit Template Message Icon
+    template_page.Edit Message Template Name    ${edit_name_message08}
+    template_page.Click Defualt Tab
+    template_page.Click Style2
+    template_page.Import Upper Image    ${upper_image_path08}
+    template_page.Import Lower Image    ${lower_image_path08}
+    template_page.Input Message Template    ${message_input08}
+    template_page.Selete Color Template    ${color_input08}
+    template_page.Click Save Message Template Button
