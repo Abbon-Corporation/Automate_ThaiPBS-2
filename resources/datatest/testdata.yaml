@@ -360,3 +360,7 @@ tc_template_edit_004:
   name_of_defualt_type: AutomateTest016  #ค้นหาเอา tc_template_create_016 มาแก้ไข
   message_name_input: AutomateTestCustom
   json_input: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/json_code.json
+
+tc_template_delete_001:
+  status_active: ACTIVE
+  delete_action: ['ลบ']

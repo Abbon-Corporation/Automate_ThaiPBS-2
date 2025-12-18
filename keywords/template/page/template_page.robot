@@ -45,6 +45,7 @@ ${side_menu_icon}    xpath=//button[@class='inline-flex items-center justify-cen
 ${template_list_txt}    xpath=//*[text()="การจัดการข้อความอวยพร"]
 ${more_action_el}    xpath=//div[@role='menuitem']
 ${edit_button_view_page}    xpath=//button[text()="แก้ไข"]
+${delete_bt}    xpath=//button[text()="ลบ"]
 ${publish_bt}    xpath=//div[@role='menuitem'][4]
 
 *** Keywords ***
@@ -336,6 +337,12 @@ Click View Detail Icon
     SeleniumLibrary.Wait Until Element Is Enabled    ${view_detail}    ${GLOBAL_CONFIG['TIME_OUT']}
     SeleniumLibrary.Wait Until Element Is Visible    ${view_detail}    ${GLOBAL_CONFIG['TIME_OUT']}
     common.Click Element When Ready    ${view_detail}
+
+Click Delete Icon
+    [Documentation]    Click view icon to view page
+    SeleniumLibrary.Wait Until Element Is Enabled    ${delete_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${delete_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    common.Click Element When Ready    ${delete_bt}
 
 #keyword of edit page
 Verify Edit Page Should Have Contain
