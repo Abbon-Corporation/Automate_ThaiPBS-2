@@ -209,7 +209,7 @@ tc_template_create_015:
   right_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
 
 tc_template_create_016:
-  name_input: AutomateTest
+  name_input: AutomateTest016  #ตั้งชื่อให้ tc_template_edit_004 เอาไปแก้ไข
   message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
   message_name_input: AutomateTest
   message_templat_input: AutomateTest
@@ -352,3 +352,11 @@ tc_template_edit_003:
   color_01: rgb(18, 18, 18)
   upper_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
   lower_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+
+tc_template_edit_004:
+  status_inactive: INACTIVE
+  name_input: AutomateEdit
+  message_input: Automate_Edit!@#$%^&**(())_+
+  name_of_defualt_type: AutomateTest016  #ค้นหาเอา tc_template_create_016 มาแก้ไข
+  message_name_input: AutomateTestCustom
+  json_input: /Users/thawaichaithongmon/Automate_ThaiPBS-2/resources/import_file/json_code.json
