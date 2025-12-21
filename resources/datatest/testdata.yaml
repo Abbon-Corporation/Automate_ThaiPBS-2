@@ -368,3 +368,7 @@ tc_template_delete_001:
 tc_template_delete_002:
   status_schedule: SCHEDULE
   name_of_automate: AutomateTest
+
+tc_template_delete_003:
+  status_inactive: INACTIVE
+  name_of_automate: AutomateTest
