@@ -167,7 +167,7 @@ tc_template_create_011:
   lower_image_path_02: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
 
 tc_template_create_012:
-  name_input: AutomateTest
+  name_input: AutomateTest012    #ตั้งชื่อให้ tc_template_delete_006 เอาไปลบ
   message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
   message_name_input: AutomateTest
   json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json
@@ -380,3 +380,8 @@ tc_template_delete_004:
 tc_template_delete_005:
   status_schedule: SCHEDULE
   name_of_custom: AutomateTestCustom06  #เอา tc_template_create_006 มาลบ
+
+tc_template_delete_006:
+  status_active: ACTIVE
+  name_of_custom: AutomateTest012   #เอา tc_template_create_012 มาลบ
+  delete_action: ['ลบ']
