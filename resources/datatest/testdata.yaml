@@ -364,3 +364,7 @@ tc_template_edit_004:
 tc_template_delete_001:
   status_active: ACTIVE
   delete_action: ['ลบ']
+
+tc_template_delete_002:
+  status_schedule: SCHEDULE
+  name_of_automate: AutomateTest

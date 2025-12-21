@@ -42,11 +42,16 @@ ${edit_bt}    xpath=//*[@class='relative select-none items-center rounded-sm tex
 ${start_date_el}    xpath=//*[@class="inline-flex items-center whitespace-nowrap transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 px-4 py-2 w-full h-10 text-sm text-black placeholder:text-black-alpha-100 font-normal justify-start text-left bg-white border border-border shadow-none rounded"]
 ${edit_icon_first}    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-[4px] text-lg font-normal transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 border bg-transparent text-primary shadow-sm hover:bg-accent hover:text-accent-foreground border-color-border-split-brand size-[30px]'][1]
 ${side_menu_icon}    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap text-lg font-normal transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 absolute top-14 -right-4 size-8 rounded-full cursor-pointer bg-s-primary hover:bg-s-primary-accent dark:border dark:border-b-primary shadow-lg']
-${template_list_txt}    xpath=//*[text()="การจัดการข้อความอวยพร"]
+${template_list_txt}    xpath=//*[@class="line-clamp-1 cursor-pointer hover:underline hover:text-brand"]
 ${more_action_el}    xpath=//div[@role='menuitem']
 ${edit_button_view_page}    xpath=//button[text()="แก้ไข"]
-${delete_bt}    xpath=//button[text()="ลบ"]
+${delete_shcedule_bt}    xpath=//*[@role="menuitem"][5]
+${delete_expired_bt}    xpath=//*[@role="menuitem"][3]
+${confirm_delete_bt}    xpath=//button[text()="ยืนยัน"]
 ${publish_bt}    xpath=//div[@role='menuitem'][4]
+${confirm_delete_bt}    xpath=//*[@class="inline-flex items-center justify-center whitespace-nowrap rounded-[4px] transition-colors focus-visible:outline-none disabled:pointer-events-none py-2 disabled:bg-disabled disabled:text-gray-400 disabled:opacity-1 cursor-pointer bg-primary text-white text-lg font-normal px-6"]
+${delete_toast_el}    xpath=//li[@data-sonner-toast]//div[contains(@class,'border-success')]
+${delete_toast_txt}    เทมเพลตได้ถูกลบสำเร็จแล้ว
 
 *** Keywords ***
 #Keyword of create page
@@ -206,6 +211,8 @@ Click Save Template Button
 Verify With Name When Create Tempalte Success
     [Documentation]    Click to save template
     [Arguments]    ${craete_name_validate}
+    SeleniumLibrary.Wait Until Element Is Enabled    ${template_list_txt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${template_list_txt}    ${GLOBAL_CONFIG['TIME_OUT']}
     common.Wait Until Element Is Ready For Interaction    ${template_list_txt}
     common.Click Element When Ready    ${side_menu_icon}
     Sleep    2
@@ -338,11 +345,19 @@ Click View Detail Icon
     SeleniumLibrary.Wait Until Element Is Visible    ${view_detail}    ${GLOBAL_CONFIG['TIME_OUT']}
     common.Click Element When Ready    ${view_detail}
 
-Click Delete Icon
-    [Documentation]    Click view icon to view page
-    SeleniumLibrary.Wait Until Element Is Enabled    ${delete_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
-    SeleniumLibrary.Wait Until Element Is Visible    ${delete_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
-    common.Click Element When Ready    ${delete_bt}
+Click Delete Schedule Template
+    [Documentation]    Click delete icon to delete schedule item
+    SeleniumLibrary.Wait Until Element Is Enabled    ${delete_shcedule_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${delete_shcedule_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    common.Click Element When Ready    ${delete_shcedule_bt}
+    common.Click Element When Ready    ${confirm_delete_bt}
+
+Verify Delete Success Toast
+    [Documentation]    Verify delete success toast
+    SeleniumLibrary.Wait Until Element Is Enabled    ${delete_toast_el}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${delete_toast_el}    ${GLOBAL_CONFIG['TIME_OUT']}
+    common.Wait Until Element Is Ready For Interaction    ${delete_toast_el}
+    SeleniumLibrary.Page Should Contain    ${delete_toast_txt}
 
 #keyword of edit page
 Verify Edit Page Should Have Contain
