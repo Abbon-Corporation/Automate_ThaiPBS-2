@@ -225,8 +225,20 @@ Edit Template Message CustomType To DefualtType
     template_page.Selete Color Template    ${color_input08}
     template_page.Click Save Message Template Button
 
+Delete Scchedule And Inactive Tempalte Success
+    [Documentation]    User can delete the tempalt and verify the tempale should not have
+    template_page.Click More Action
+    template_page.Click Delete Schedule Template
+    template_page.Verify Delete Success Toast
+
 Delete Scchedule Tempalte Success
     [Documentation]    User can delete the tempalt and verify the tempale should not have
     template_page.Click More Action
     template_page.Click Delete Schedule Template
+    template_page.Verify Delete Success Toast
+
+Delete Expired Tempalte Success
+    [Documentation]    User can delete the tempalt and verify the tempale should not have
+    template_page.Click More Action
+    template_page.Click Delete Expired Template
     template_page.Verify Delete Success Toast

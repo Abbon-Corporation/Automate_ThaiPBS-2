@@ -352,6 +352,13 @@ Click Delete Schedule Template
     common.Click Element When Ready    ${delete_shcedule_bt}
     common.Click Element When Ready    ${confirm_delete_bt}
 
+Click Delete Expired Template
+    [Documentation]    Click delete icon to delete expired item
+    SeleniumLibrary.Wait Until Element Is Enabled    ${delete_expired_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${delete_expired_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    common.Click Element When Ready    ${delete_expired_bt}
+    common.Click Element When Ready    ${confirm_delete_bt}
+
 Verify Delete Success Toast
     [Documentation]    Verify delete success toast
     SeleniumLibrary.Wait Until Element Is Enabled    ${delete_toast_el}    ${GLOBAL_CONFIG['TIME_OUT']}

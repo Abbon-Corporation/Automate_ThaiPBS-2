@@ -13,4 +13,4 @@ TC_Template_delete_002 - Delete
     home_feature.Tap Main Menu And Submenu    ${home_page['message']}    ${home_page['template_module']}
     template_page.Select Status From Status Dropdown List    ${tc_template_delete_002['status_schedule']}
     template_page.Search Name Template    ${tc_template_delete_002['name_of_automate']}    #ลบเฉพาะรายการที่สร้างด้วยระบบ Automate
-    template_feature.Delete Scchedule Tempalte Success
+    template_feature.Delete Scchedule And Inactive Tempalte Success

@@ -372,3 +372,7 @@ tc_template_delete_002:
 tc_template_delete_003:
   status_inactive: INACTIVE
   name_of_automate: AutomateTest
+
+tc_template_delete_004:
+  status_expired: EXPIRE
+  name_of_automate: AutomateTest
