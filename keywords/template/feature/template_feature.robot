@@ -135,7 +135,7 @@ Seach And Inactive Template
     template_page.Verify Modal Confirm To Inactive
     template_page.Click Confirm To Inactive Button
     template_page.Verify Status After Inactive Success
-    
+
 Seach And Publish Template
     [Documentation]    Seach by name after that can publish success for inactive status
     [Arguments]    ${search_input01}
