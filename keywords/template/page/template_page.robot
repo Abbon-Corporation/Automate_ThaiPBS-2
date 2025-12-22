@@ -49,7 +49,6 @@ ${delete_shcedule_bt}    xpath=//*[@role="menuitem"][5]
 ${delete_expired_bt}    xpath=//*[@role="menuitem"][3]
 ${confirm_delete_bt}    xpath=//button[text()="ยืนยัน"]
 ${publish_bt}    xpath=//div[@role='menuitem'][4]
-${confirm_delete_bt}    xpath=//*[@class="inline-flex items-center justify-center whitespace-nowrap rounded-[4px] transition-colors focus-visible:outline-none disabled:pointer-events-none py-2 disabled:bg-disabled disabled:text-gray-400 disabled:opacity-1 cursor-pointer bg-primary text-white text-lg font-normal px-6"]
 ${delete_toast_el}    xpath=//li[@data-sonner-toast]//div[contains(@class,'border-success')]
 ${delete_toast_txt}    เทมเพลตได้ถูกลบสำเร็จแล้ว
 
