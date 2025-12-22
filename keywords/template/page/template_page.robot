@@ -16,7 +16,7 @@ ${current_time_elm}    xpath=//button[@class='inline-flex items-center justify-c
 ${tap_end_time_elm}    xpath=//input[@placeholder='ระบุเวลาสิ้นสุด']
 ${create_massage_tempalte_bt}    xpath=//button[@class='w-full h-14 border border-dashed border-primary text-primary rounded-md hover:bg-brand-50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent']
 ${input_message_tempale_name_elm}    xpath=//input[@name="name"]
-${defualt_tab}    xpath=//button[contains(.,'Defualt')]
+${defualt_tab}    xpath=//button[text()="Default"]
 ${custom_tab}    xpath=//button[contains(.,'Custom')]
 ${style1_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-primary bg-brand-50"]
 ${style2_elm}    xpath=//*[@class="flex flex-col items-center justify-between gap-2 border w-[94px] min-h-[120px] rounded-lg transition-all duration-200 ease-in-out p-2 hover:-translate-y-1 hover:cursor-pointer border-border bg-white"][1]
@@ -34,6 +34,7 @@ ${seach_bt}    xpath=//button[text()="ค้นหา"]
 ${more_action_bt}    xpath=//*[@class='p-1 border border-error-100 rounded cursor-pointer']
 ${inactive_bt01}    xpath=//*[@class='relative select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-w-60 flex gap-3 py-2.5 px-4 hover:bg-white cursor-pointer'][4]
 ${inactive_bt02}    xpath=//*[@class='relative select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 min-w-60 flex gap-3 py-2.5 px-4 hover:bg-white cursor-pointer'][3]
+${view_detail}    xpath=//div[@role='menuitem'][1]
 ${confirm_inactive_bt}    xpath=//*[@class="inline-flex items-center justify-center whitespace-nowrap rounded-[4px] transition-colors focus-visible:outline-none disabled:pointer-events-none py-2 disabled:bg-disabled disabled:text-gray-400 disabled:opacity-1 cursor-pointer bg-primary text-white text-lg font-normal px-6"]
 ${confirm_time_bt}    xpath=//button[text()="ยืนยัน"]
 ${dropdown_status_bt}    xpath=//button[@class='flex w-full items-center justify-between whitespace-nowrap border border-border data-[state=open]:border-primary bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 data-[placeholder]:text-black-alpha-100 aria-[invalid=true]:border-error h-10 rounded shadow-none']
@@ -42,6 +43,9 @@ ${start_date_el}    xpath=//*[@class="inline-flex items-center whitespace-nowrap
 ${edit_icon_first}    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-[4px] text-lg font-normal transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 border bg-transparent text-primary shadow-sm hover:bg-accent hover:text-accent-foreground border-color-border-split-brand size-[30px]'][1]
 ${side_menu_icon}    xpath=//button[@class='inline-flex items-center justify-center whitespace-nowrap text-lg font-normal transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 absolute top-14 -right-4 size-8 rounded-full cursor-pointer bg-s-primary hover:bg-s-primary-accent dark:border dark:border-b-primary shadow-lg']
 ${template_list_txt}    xpath=//*[text()="การจัดการข้อความอวยพร"]
+${more_action_el}    xpath=//div[@role='menuitem']
+${edit_button_view_page}    xpath=//button[text()="แก้ไข"]
+${publish_bt}    xpath=//div[@role='menuitem'][4]
 
 *** Keywords ***
 #Keyword of create page
@@ -258,6 +262,12 @@ Click Inactive Action Button
     SeleniumLibrary.Wait Until Element Is Visible    ${inactive_bt01}    ${GLOBAL_CONFIG['TIME_OUT']}
     common.Click Element When Ready    ${inactive_bt01}
 
+Click Publish Action Button
+    [Documentation]    Click inactive action button for schedule status
+    SeleniumLibrary.Wait Until Element Is Enabled    ${publish_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${publish_bt}    ${GLOBAL_CONFIG['TIME_OUT']}
+    common.Click Element When Ready    ${publish_bt}
+
 Click Inactive Action Button For Active Status Record
     [Documentation]    Click inactive action button for active status
     SeleniumLibrary.Wait Until Element Is Enabled    ${inactive_bt02}    ${GLOBAL_CONFIG['TIME_OUT']}
@@ -275,6 +285,10 @@ Click Confirm To Inactive Button
 Verify Status After Inactive Success
     [Documentation]    Verify the template have contain
     SeleniumLibrary.Page Should Contain    ${template_module['inactive_status']}
+
+Verify Status After Active Success
+    [Documentation]    Verify the template have contain
+    SeleniumLibrary.Page Should Contain    ${template_module['active_status']}
 
 Verify Status After Expired Success
     [Documentation]    Verify the template have contain
@@ -294,6 +308,34 @@ Select Status From Status Dropdown List
 Click Edit Button On More Action
     [Documentation]    Click edit button
     common.Click Element When Ready    ${edit_bt}
+
+Get More Action Button Form Template
+    [Documentation]    Get value form xpath to validate all button when template is active status
+    common.Wait Until Element Is Ready For Interaction    ${more_action_el}
+    ${action_list}=    Create List
+    @{action_value_el}=    Get WebElements    ${more_action_el}
+    FOR    ${el}    IN    @{action_value_el}
+    ${action_txt}=    Get Text    ${el}
+    Append To List    ${action_list}    ${action_txt}
+    END
+    RETURN    ${action_list}
+
+Verify Value Of More Action Should Not Have Button
+    [Documentation]    The action button should NOT have invalid value (ปิดใช้งาน,แก้ไข,ลบ)
+    [Arguments]    ${invalid_action}    @{action_list}
+    FOR    ${item}    IN    @{action_list}
+        List Should Not Contain Value
+        ...    ${invalid_action}
+        ...    ${item}
+        ...    msg=Validation FAILED! Found invalid status: '${item}'
+        Log    '${item}' is a valid status.
+    END
+
+Click View Detail Icon
+    [Documentation]    Click view icon to view page
+    SeleniumLibrary.Wait Until Element Is Enabled    ${view_detail}    ${GLOBAL_CONFIG['TIME_OUT']}
+    SeleniumLibrary.Wait Until Element Is Visible    ${view_detail}    ${GLOBAL_CONFIG['TIME_OUT']}
+    common.Click Element When Ready    ${view_detail}
 
 #keyword of edit page
 Verify Edit Page Should Have Contain
@@ -333,3 +375,7 @@ Verify With Name When Edit Tempalte Success
     [Arguments]    ${edit_name_validate}
     common.Click Element When Ready    ${side_menu_icon}
     SeleniumLibrary.Page Should Contain    ${edit_name_validate}
+
+Verify Edit Button On View Page Should Not Have
+    [Documentation]    Should not have the edit button on view page
+    SeleniumLibrary.Page Should Not Contain Element    ${edit_button_view_page}

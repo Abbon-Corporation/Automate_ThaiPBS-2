@@ -1,5 +1,5 @@
 tc_template_create_001:
-  name_input: AutomateTest01  #ตั้งชื่อให้ tc_template_ำกระ_001 เอาไปแก้ไข
+  name_input: AutomateTest01  #ตั้งชื่อให้ tc_template_edit_001 เอาไปแก้ไข
   message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
   message_name_input: AutomateTest
   message_templat_input: AutomateTest
@@ -209,7 +209,7 @@ tc_template_create_015:
   right_image_path_03: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png003.png
 
 tc_template_create_016:
-  name_input: AutomateTest
+  name_input: AutomateTest016  #ตั้งชื่อให้ tc_template_edit_004 เอาไปแก้ไข
   message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
   message_name_input: AutomateTest
   message_templat_input: AutomateTest
@@ -253,7 +253,7 @@ tc_template_create_017:
   lower_image_path_05: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/png005.png
 
 tc_template_create_018:
-  name_input: AutomateTest
+  name_input: AutomateTest018  #ตั้งชื่อให้ tc_template_edit_003 เอาไปแก้ไข
   message_input: ทดสอบ1234567890+๑๒๓๔ู฿๕๖๗๘๙  //.:;abcABC
   message_name_input: AutomateTest
   json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json
@@ -335,5 +335,28 @@ tc_template_edit_001:
   name_input: AutomateEdit
   message_input: Automate_Edit!@#$%^&**(())_+
   name_of_defualt_type: AutomateTest01  #ค้นหาเอา tc_template_create_001 มาแก้ไข
+  message_name_input: AutomateTestCustom
+  json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json
+
+tc_template_edit_002:
+  status_active: ACTIVE
+  edit_action: ['แก้ไข']
+
+tc_template_edit_003:
+  status_inactive: INACTIVE
+  name_input: AutomateEdit
+  message_input: Automate_Edit!@#$%^&**(())_+
+  name_of_defualt_type: AutomateTest018  #ค้นหาเอาจาก tc_template_create_018 มาแก้ไข
+  message_name_input: AutomateTest
+  message_templat_input: AutomateTest
+  color_01: rgb(18, 18, 18)
+  upper_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+  lower_image_path_01: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/jpeg001.jpeg
+
+tc_template_edit_004:
+  status_inactive: INACTIVE
+  name_input: AutomateEdit
+  message_input: Automate_Edit!@#$%^&**(())_+
+  name_of_defualt_type: AutomateTest016  #ค้นหาเอา tc_template_create_016 มาแก้ไข
   message_name_input: AutomateTestCustom
   json_input: /home/runner/work/Automate_ThaiPBS-2/Automate_ThaiPBS-2/resources/import_file/json_code.json
